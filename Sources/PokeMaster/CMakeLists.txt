@@ -19,9 +19,31 @@ file(GLOB_RECURSE headers
 file(GLOB_RECURSE sources
     ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 
+# Custom-build event
+if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+    set(poke_master_header_gen_py ${root_dir}/Scripts/header_gen.py)
+    add_custom_command(
+        COMMAND python ${poke_master_header_gen_py}
+        DEPENDS ${headers}
+        OUTPUT ${root_dir}/Includes/PokeMaster.hpp
+    )
+    add_custom_target(poke_master_header_gen_py ALL
+        DEPENDS ${root_dir}/Includes/PokeMaster.hpp)
+else ()
+    set(poke_master_header_gen_py ${root_dir}/Scripts/header_gen.py)
+    add_custom_command(
+        COMMAND python3 ${poke_master_header_gen_py}
+        DEPENDS ${headers}
+        OUTPUT ${root_dir}/Includes/PokeMaster.hpp
+    )
+    add_custom_target(poke_master_header_gen_py ALL
+        DEPENDS ${root_dir}/Includes/PokeMaster.hpp)
+endif ()
+
 # Build library
 add_library(${target}
     ${sources})
+add_dependencies(${target} poke_master_header_gen_py)
 
 # Project options
 set_target_properties(${target}
