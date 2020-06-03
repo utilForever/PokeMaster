@@ -32,6 +32,11 @@ endif()
 # Overrides
 set(CMAKE_MACOSX_RPATH ON)
 
+# Set resources
+set(RESOURCES_DIR ${ROSETTA_ROOT}/Resources)
+set(RESOURCES_JSONS
+    ${RESOURCES_DIR}/pokemon.json)
+
 # Project modules
 add_subdirectory(Libraries/doctest)
 add_subdirectory(Sources/PokeMaster)
