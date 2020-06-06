@@ -8,6 +8,7 @@
 #ifndef POKE_MASTER_HPP
 #define POKE_MASTER_HPP
 
+#include <PokeMaster/Models/Pokemon.hpp>
 #include <PokeMaster/PokeMaster.hpp>
 
 #endif  // POKE_MASTER_HPP
