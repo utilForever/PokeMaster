@@ -10,6 +10,7 @@
 
 #include <PokeMaster/Commons/Constants.hpp>
 #include <PokeMaster/Loaders/PokemonLoader.hpp>
+#include <PokeMaster/Managers/PokemonManager.hpp>
 #include <PokeMaster/Models/Pokemon.hpp>
 #include <PokeMaster/PokeMaster.hpp>
 
