@@ -5,14 +5,8 @@
 // personal capacity and are not conveying any rights to any intellectual
 // property of any third parties.
 
-#ifndef POKE_MASTER_HPP
-#define POKE_MASTER_HPP
-
-#include <PokeMaster/Commons/Constants.hpp>
-#include <PokeMaster/Loaders/PokemonLoader.hpp>
-#include <PokeMaster/Managers/PokemonManager.hpp>
 #include <PokeMaster/Models/Move.hpp>
-#include <PokeMaster/Models/Pokemon.hpp>
-#include <PokeMaster/PokeMaster.hpp>
 
-#endif  // POKE_MASTER_HPP
+namespace PokeMaster
+{
+}  // namespace PokeMaster
