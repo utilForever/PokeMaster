@@ -8,6 +8,8 @@
 #ifndef POKEMASTER_POKEMON_HPP
 #define POKEMASTER_POKEMON_HPP
 
+#include <string_view>
+
 namespace PokeMaster
 {
 //!
@@ -26,6 +28,9 @@ namespace PokeMaster
 //!
 class Pokemon
 {
+ public:
+    int id;
+    std::string_view name;
 };
 }  // namespace PokeMaster
 
