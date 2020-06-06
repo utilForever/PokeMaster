@@ -9,6 +9,7 @@
 #define POKE_MASTER_HPP
 
 #include <PokeMaster/Commons/Constants.hpp>
+#include <PokeMaster/Loaders/PokemonLoader.hpp>
 #include <PokeMaster/Models/Pokemon.hpp>
 #include <PokeMaster/PokeMaster.hpp>
 
