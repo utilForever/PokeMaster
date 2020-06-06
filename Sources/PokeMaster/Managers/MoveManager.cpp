@@ -5,16 +5,26 @@
 // personal capacity and are not conveying any rights to any intellectual
 // property of any third parties.
 
-#ifndef POKE_MASTER_HPP
-#define POKE_MASTER_HPP
-
-#include <PokeMaster/Commons/Constants.hpp>
 #include <PokeMaster/Loaders/MoveLoader.hpp>
-#include <PokeMaster/Loaders/PokemonLoader.hpp>
 #include <PokeMaster/Managers/MoveManager.hpp>
-#include <PokeMaster/Managers/PokemonManager.hpp>
-#include <PokeMaster/Models/Move.hpp>
-#include <PokeMaster/Models/Pokemon.hpp>
-#include <PokeMaster/PokeMaster.hpp>
 
-#endif  // POKE_MASTER_HPP
+namespace PokeMaster
+{
+std::array<Move, NUM_MOVES> MoveManager::m_moves;
+
+MoveManager::MoveManager()
+{
+    MoveLoader::Load(m_moves);
+}
+
+MoveManager& MoveManager::GetInstance()
+{
+    static MoveManager instance;
+    return instance;
+}
+
+const std::array<Move, NUM_MOVES>& MoveManager::GetAllMoves()
+{
+    return m_moves;
+}
+}  // namespace PokeMaster
