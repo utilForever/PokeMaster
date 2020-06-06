@@ -9,6 +9,5 @@
 #define POKE_MASTER_HPP
 
 #include <PokeMaster/PokeMaster.hpp>
-#include <PokeMaster/Test.hpp>
 
 #endif  // POKE_MASTER_HPP
