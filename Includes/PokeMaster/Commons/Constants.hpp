@@ -13,6 +13,9 @@ namespace PokeMaster
 //! The number of pokemons.
 constexpr int NUM_POKEMONS = 964;
 
+//! The number of moves.
+constexpr int NUM_MOVES = 746;
+
 }  // namespace PokeMaster
 
 #endif  // POKEMASTER_CONSTANTS_HPP
