@@ -5,11 +5,14 @@
 // personal capacity and are not conveying any rights to any intellectual
 // property of any third parties.
 
-#ifndef POKE_MASTER_HPP
-#define POKE_MASTER_HPP
+#ifndef POKEMASTER_CONSTANTS_HPP
+#define POKEMASTER_CONSTANTS_HPP
 
-#include <PokeMaster/Commons/Constants.hpp>
-#include <PokeMaster/Models/Pokemon.hpp>
-#include <PokeMaster/PokeMaster.hpp>
+namespace PokeMaster
+{
+//! The number of pokemons.
+constexpr int NUM_POKEMONS = 964;
 
-#endif  // POKE_MASTER_HPP
+}  // namespace PokeMaster
+
+#endif  // POKEMASTER_CONSTANTS_HPP
