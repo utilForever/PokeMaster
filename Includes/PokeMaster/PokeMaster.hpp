@@ -12,6 +12,7 @@
 #include <PokeMaster/Loaders/AbilityLoader.hpp>
 #include <PokeMaster/Loaders/MoveLoader.hpp>
 #include <PokeMaster/Loaders/PokemonLoader.hpp>
+#include <PokeMaster/Managers/AbilityManager.hpp>
 #include <PokeMaster/Managers/MoveManager.hpp>
 #include <PokeMaster/Managers/PokemonManager.hpp>
 #include <PokeMaster/Models/Ability.hpp>
