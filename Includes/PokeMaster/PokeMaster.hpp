@@ -16,6 +16,7 @@
 #include <PokeMaster/Managers/MoveManager.hpp>
 #include <PokeMaster/Managers/PokemonManager.hpp>
 #include <PokeMaster/Models/Ability.hpp>
+#include <PokeMaster/Models/Battle.hpp>
 #include <PokeMaster/Models/Move.hpp>
 #include <PokeMaster/Models/Pokemon.hpp>
 #include <PokeMaster/PokeMaster.hpp>
