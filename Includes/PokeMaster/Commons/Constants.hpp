@@ -19,6 +19,9 @@ constexpr int NUM_MOVES = 746;
 //! The number of abilities.
 constexpr int NUM_ABILITIES = 293;
 
+//! The number of items.
+constexpr int NUM_ITEMS = 954;
+
 }  // namespace PokeMaster
 
 #endif  // POKEMASTER_CONSTANTS_HPP
