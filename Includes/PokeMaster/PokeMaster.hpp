@@ -11,6 +11,7 @@
 #include <PokeMaster/Commons/Constants.hpp>
 #include <PokeMaster/Commons/Utils.hpp>
 #include <PokeMaster/Loaders/AbilityLoader.hpp>
+#include <PokeMaster/Loaders/ItemLoader.hpp>
 #include <PokeMaster/Loaders/MoveLoader.hpp>
 #include <PokeMaster/Loaders/PokemonLoader.hpp>
 #include <PokeMaster/Managers/AbilityManager.hpp>
