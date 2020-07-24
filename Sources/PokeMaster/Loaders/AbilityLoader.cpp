@@ -17,11 +17,6 @@ void AbilityLoader::Load(std::array<Ability, NUM_ABILITIES>& abilities)
     std::ifstream abilityFile(RESOURCES_DIR "abilities.json");
     nlohmann::json j;
 
-    if (!abilityFile.is_open())
-    {
-        throw std::runtime_error("Can't open abilities.json");
-    }
-
     abilityFile >> j;
 
     std::size_t idx = 0;

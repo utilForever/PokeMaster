@@ -17,11 +17,6 @@ void MoveLoader::Load(std::array<Move, NUM_MOVES>& moves)
     std::ifstream moveFile(RESOURCES_DIR "moves.json");
     nlohmann::json j;
 
-    if (!moveFile.is_open())
-    {
-        throw std::runtime_error("Can't open moves.json");
-    }
-
     moveFile >> j;
 
     std::size_t idx = 0;

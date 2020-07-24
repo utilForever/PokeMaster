@@ -17,11 +17,6 @@ void PokemonLoader::Load(std::array<Pokemon, NUM_POKEMONS>& pokemons)
     std::ifstream pokemonFile(RESOURCES_DIR "pokemon.json");
     nlohmann::json j;
 
-    if (!pokemonFile.is_open())
-    {
-        throw std::runtime_error("Can't open pokemon.json");
-    }
-
     pokemonFile >> j;
 
     std::size_t idx = 0;

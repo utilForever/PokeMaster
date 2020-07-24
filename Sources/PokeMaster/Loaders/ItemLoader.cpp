@@ -17,11 +17,6 @@ void ItemLoader::Load(std::array<Item, NUM_ITEMS>& items)
     std::ifstream itemFile(RESOURCES_DIR "items.json");
     nlohmann::json j;
 
-    if (!itemFile.is_open())
-    {
-        throw std::runtime_error("Can't open items.json");
-    }
-
     itemFile >> j;
 
     std::size_t idx = 0;
