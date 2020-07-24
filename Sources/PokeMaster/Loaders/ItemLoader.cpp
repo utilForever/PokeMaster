@@ -5,19 +5,19 @@
 // personal capacity and are not conveying any rights to any intellectual
 // property of any third parties.
 
-#include <PokeMaster/Loaders/PokemonLoader.hpp>
+#include <PokeMaster/Loaders/ItemLoader.hpp>
 
 #include <fstream>
 
 namespace PokeMaster
 {
-void PokemonLoader::Load(std::array<Pokemon, NUM_POKEMONS>& pokemons)
+void ItemLoader::Load(std::array<Item, NUM_ITEMS>& items)
 {
-    // Read Pokemon data from JSON file
-    std::ifstream pokemonFile(RESOURCES_DIR "pokemon.json");
+    // Read Item data from JSON file
+    std::ifstream itemFile(RESOURCES_DIR "items.json");
     nlohmann::json j;
 
-    pokemonFile >> j;
+    itemFile >> j;
 
     std::size_t idx = 0;
 
@@ -26,14 +26,14 @@ void PokemonLoader::Load(std::array<Pokemon, NUM_POKEMONS>& pokemons)
         const int id = data["id"].get<int>();
         const auto name = data["identifier"].get<std::string_view>();
 
-        Pokemon pokemon;
-        pokemon.id = id;
-        pokemon.name = name;
+        Item item;
+        item.id = id;
+        item.name = name;
 
-        pokemons.at(idx) = pokemon;
+        items.at(idx) = item;
         ++idx;
     }
 
-    pokemonFile.close();
+    itemFile.close();
 }
 }  // namespace PokeMaster
