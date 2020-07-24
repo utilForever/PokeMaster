@@ -22,6 +22,37 @@ constexpr int NUM_ABILITIES = 293;
 //! The number of items.
 constexpr int NUM_ITEMS = 954;
 
+enum Type
+    {
+        NORMAL = 1,
+        FIGHTING,
+        FLYING,
+        POISON,
+        GROUND,
+        ROCK,
+        BUG,
+        GHOST,
+        STEEL,
+        FIRE,
+        WATER,
+        GRASS,
+        ELECTRIC,
+        PSYCHIC,
+        ICE,
+        DRAGON,
+        DARK,
+        FAIRY,
+        UNKNOWN,
+        SHADOW
+    };
+
+enum DamageClass
+    {
+        STATUS = 1,
+        PHYSICAL,
+        SPECIAL
+    };
+
 }  // namespace PokeMaster
 
 #endif  // POKEMASTER_CONSTANTS_HPP
