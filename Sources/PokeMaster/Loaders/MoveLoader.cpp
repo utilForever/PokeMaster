@@ -25,10 +25,14 @@ void MoveLoader::Load(std::array<Move, NUM_MOVES>& moves)
     {
         const int id = data["id"].get<int>();
         const auto name = data["identifier"].get<std::string_view>();
+        const auto type = data["type_id"].get<int>();
+        const auto damage_class = data["damage_class_id"].get<int>();
 
         Move move;
-        move.id = id;
-        move.name = name;
+        move.SetID(id);
+        move.SetName(name);
+        move.SetType(type);
+        move.SetDamageClass(damage_class);
 
         moves.at(idx) = move;
         ++idx;
