@@ -15,7 +15,11 @@ TEST_CASE("[MoveManager] - GetAllMoves")
     auto moves = MoveManager::GetInstance().GetAllMoves();
     for (auto& move : moves)
     {
-        CHECK_NE(move.id, 0);
-        CHECK_FALSE(move.name.empty());
+        CHECK_NE(move.GetID(), 0);
+        CHECK_FALSE(move.GetName().empty());
+        CHECK_NE(move.GetType(), 0);
+        CHECK_NE(move.GetDamageClass(), 0);
+        CHECK_NE(move.GetPP(), 0);
+        CHECK_NE(move.GetAccuracy(), 0);
     }
 }
