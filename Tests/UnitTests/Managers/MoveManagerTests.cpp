@@ -20,6 +20,8 @@ TEST_CASE("[MoveManager] - GetAllMoves")
         CHECK_NE(move.GetType(), 0);
         CHECK_NE(move.GetDamageClass(), 0);
         CHECK_NE(move.GetPP(), 0);
+
+        // This line must be updated in the near future.
         CHECK_NE(move.GetAccuracy(), 0);
     }
 }
