@@ -56,6 +56,8 @@ class Move
     //! \return The accuracy of a move
     const int GetAccuracy();
 
+    const int GetPower();
+
     /*
      * Setters for modifying member variables of Move class
      */
@@ -84,6 +86,8 @@ class Move
     //! \return Nothing
     void SetAccuracy(int in_accuracy);
 
+    void SetPower(int in_power);
+
 private:
     int id;
     std::string_view name;
@@ -91,6 +95,7 @@ private:
     int damage_class;
     int pp;
     int accuracy;
+    int power;
 
 };
 }  // namespace PokeMaster
