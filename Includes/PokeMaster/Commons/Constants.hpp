@@ -25,32 +25,32 @@ constexpr int NUM_ITEMS = 954;
 enum Type
     {
         NORMAL = 1,
-        FIGHTING,
-        FLYING,
-        POISON,
-        GROUND,
-        ROCK,
-        BUG,
-        GHOST,
-        STEEL,
-        FIRE,
-        WATER,
-        GRASS,
-        ELECTRIC,
-        PSYCHIC,
-        ICE,
-        DRAGON,
-        DARK,
-        FAIRY,
-        UNKNOWN,
-        SHADOW
+        FIGHTING,   // 2
+        FLYING,     // 3
+        POISON,     // 4
+        GROUND,     // 5
+        ROCK,       // 6
+        BUG,        // 7
+        GHOST,      // 8
+        STEEL,      // 9
+        FIRE,       // 10
+        WATER,      // 11
+        GRASS,      // 12
+        ELECTRIC,   // 13
+        PSYCHIC,    // 14
+        ICE,        // 15
+        DRAGON,     // 16
+        DARK,       // 17
+        FAIRY,      // 18
+        UNKNOWN,    // 19
+        SHADOW      // 20
     };
 
 enum DamageClass
     {
         STATUS = 1,
-        PHYSICAL,
-        SPECIAL
+        PHYSICAL,   // 2
+        SPECIAL     // 3
     };
 
 }  // namespace PokeMaster
