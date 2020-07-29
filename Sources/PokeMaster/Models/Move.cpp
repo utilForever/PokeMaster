@@ -39,6 +39,11 @@ namespace PokeMaster
         return accuracy;
     }
 
+    const int Move::GetPower()
+    {
+        return power;
+    }
+
     void Move::SetID(int in_id)
     {
         this->id = in_id;
@@ -69,5 +74,9 @@ namespace PokeMaster
         this->accuracy = in_accuracy;
     }
 
+    void Move::SetPower(int in_power)
+    {
+        this->power = in_power;
+    }
 
 }  // namespace PokeMaster

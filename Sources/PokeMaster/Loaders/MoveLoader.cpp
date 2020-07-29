@@ -27,12 +27,19 @@ void MoveLoader::Load(std::array<Move, NUM_MOVES>& moves)
         const auto name = data["identifier"].get<std::string_view>();
         const auto type = data["type_id"].get<int>();
         const auto damage_class = data["damage_class_id"].get<int>();
+        const auto pp = data["pp"].get<int>();
+        const auto accuracy = data["accuracy"].get<int>();
+        const auto power = data["power"].get<int>();
 
         Move move;
+
         move.SetID(id);
         move.SetName(name);
         move.SetType(type);
         move.SetDamageClass(damage_class);
+        move.SetPP(pp);
+        move.SetAccuracy(accuracy);
+        move.SetPower(power);
 
         moves.at(idx) = move;
         ++idx;
