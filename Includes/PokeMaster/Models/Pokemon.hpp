@@ -105,7 +105,6 @@ public:
     std::array<std::optional<int>, 6> _ivs,
     std::array<std::optional<int>, 6> _evs,
     int level, int _nature);
-  
 };
 
 }  // namespace PokeMaster

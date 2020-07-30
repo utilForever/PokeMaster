@@ -62,7 +62,7 @@ enum NATURE
 	NATURE_SASSY      = 45,        //!      +SPECIAL_DEFENSE   -SPEED
 	NATURE_SERIOUS    = 0 ,
 	NATURE_TIMID      = 52         //!      +SPEED             -ATTACK
-}
+};
 
 //! Pokemon status.
 enum STATUS
@@ -74,7 +74,7 @@ enum STATUS
 	STATUS_PARALYZED,
 	STATUS_ASLEEP,
 	STATUS_FROZEN
-}
+};
 
 class Pokemon
 {
@@ -162,7 +162,6 @@ public:
 		CalcHP(_bases[0], _ivs[0], _evs[0], level);
 		CalcOtherStats(_bases, _ivs, _evs, level, nature);
 	}
-
 };
 
 }  // namespace PokeMaster
