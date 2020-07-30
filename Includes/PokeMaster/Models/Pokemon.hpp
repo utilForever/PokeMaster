@@ -8,6 +8,9 @@
 #ifndef POKEMASTER_POKEMON_HPP
 #define POKEMASTER_POKEMON_HPP
 
+#include <PokeMaster/Models/Ability.hpp>
+#include <PokeMaster/Models/Item.hpp>
+#include <PokeMaster/Models/Move.hpp>
 
 #include <iostream>
 #include <cmath>
@@ -103,7 +106,6 @@ public:
     std::array<std::optional<int>, 6> _evs,
     int level, int _nature);
   
-
 };
 
 }  // namespace PokeMaster

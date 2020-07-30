@@ -6,6 +6,9 @@
 // property of any third parties.
 
 #include <PokeMaster/Models/Pokemon.hpp>
+#include <PokeMaster/Models/Ability.hpp>
+#include <PokeMaster/Models/Item.hpp>
+#include <PokeMaster/Models/Move.hpp>
 
 #include <iostream>
 #include <cmath>
