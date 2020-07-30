@@ -10,6 +10,7 @@
 #include <iostream>
 #include <cmath>
 
+#include <optional>
 #include <string_view>
 #include <array>
 
@@ -74,8 +75,6 @@ enum STATUS
 
 class Pokemon
 {
-const int id;
-const std::string_view name;
 const int type1, type2;
 int level;
 const int nature;
@@ -111,8 +110,10 @@ void CalcOtherStats(
 	stats[stat_dec] = (int) floor(stats[stat_dec] * 0.9);
 }
 
-//! Getter & Setter Functions.
+//! ID, Name, Getter & Setter Functions.
 public:
+  int id;
+  std::string_view name;
   int GetId() { return id; }
   std::string_view GetName() { return name; }
   int GetLevel() { return level; }
