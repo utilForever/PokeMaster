@@ -8,7 +8,6 @@
 #ifndef POKEMASTER_POKEMON_HPP
 #define POKEMASTER_POKEMON_HPP
 
-#include <PokeMaster/Includes/PokeMaster/Commons.hpp>
 
 #include <iostream>
 #include <cmath>
