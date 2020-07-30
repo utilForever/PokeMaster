@@ -87,9 +87,9 @@ public:
   void SetName(std::string_view _name);
   void SetLevel(int _level);
   void SetNature(int _nature);
-  void SetStats(std::array<std::optional<int>, 6> _bases);
-  void SetStats(std::array<std::optional<int>, 6> _ivs);
-  void SetStats(std::array<std::optional<int>, 6> _evs);
+  void SetBases(std::array<std::optional<int>, 6> _bases);
+  void SetIvs(std::array<std::optional<int>, 6> _ivs);
+  void SetEvs(std::array<std::optional<int>, 6> _evs);
   void SetStats(std::array<std::optional<int>, 6> _stats);
   void SetItem(Item _item);
   void SetAbility(Ability _ability);
