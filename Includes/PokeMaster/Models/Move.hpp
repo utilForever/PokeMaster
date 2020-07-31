@@ -56,6 +56,8 @@ class Move
     //! \return The accuracy of a move
     const int GetAccuracy();
 
+    //! Returns the power of a move
+    //! \return The power of a move
     const int GetPower();
 
     /*
@@ -86,6 +88,8 @@ class Move
     //! \return Nothing
     void SetAccuracy(int in_accuracy);
 
+    //! Set the power of a move as 'in_power'
+    //! \return Nothing
     void SetPower(int in_power);
 
 private:
