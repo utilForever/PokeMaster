@@ -5,15 +5,14 @@
 // personal capacity and are not conveying any rights to any intellectual
 // property of any third parties.
 
+#pragma once
+
 #ifndef POKEMASTER_POKEMON_HPP
 #define POKEMASTER_POKEMON_HPP
 
 #include <PokeMaster/Models/Ability.hpp>
 #include <PokeMaster/Models/Item.hpp>
 #include <PokeMaster/Models/Move.hpp>
-
-#include <iostream>
-#include <cmath>
 
 #include <optional>
 #include <string_view>
@@ -37,11 +36,11 @@ namespace PokeMaster
 //!
 class Pokemon
 {
-const int type1, type2;
+int type1, type2;
 int level;
 
 //! Pokemon has nature, which slightly modifies their stats.
-const int nature;
+int nature;
 
 //! 6 stats are 'HP', 'ATTACK', 'DEFENSE', 'SPECIAL_ATTACK', 'SPECIAL_DEFENSE', and 'SPEED'.
 //! These values are calculated from various factors; Base, IV, EV and Nature.
@@ -83,7 +82,7 @@ public:
   std::array<std::optional<int>, 6> GetStats();
   Item GetItem();
   Ability GetAbility();
-  std::array<std::optional<Move>, 4> Getmoves();
+  std::array<std::optional<Move>, 4> GetMoves();
   int GetStatus();
 
   void SetId(int _id);
@@ -105,7 +104,7 @@ public:
     std::array<std::optional<int>, 6> _ivs,
     std::array<std::optional<int>, 6> _evs,
     int level, int _nature);
-};
+}; // class Pokemon
 
 }  // namespace PokeMaster
 
