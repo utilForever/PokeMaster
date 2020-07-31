@@ -22,6 +22,6 @@ TEST_CASE("[MoveManager] - GetAllMoves")
         CHECK_NE(move.GetPP(), 0);
 
         // This line must be updated in the near future.
-        CHECK_NE(move.GetAccuracy(), 0);
+        CHECK(move.GetAccuracy() > -1);
     }
 }
