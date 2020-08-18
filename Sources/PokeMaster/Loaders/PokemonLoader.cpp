@@ -26,10 +26,7 @@ void PokemonLoader::Load(std::array<Pokemon, NUM_POKEMONS>& pokemons)
         const int id = data["id"].get<int>();
         const auto name = data["identifier"].get<std::string_view>();
 
-        Pokemon pokemon;
-        pokemon.id = id;
-        pokemon.name = name;
-
+        const Pokemon pokemon{id, name};
         pokemons.at(idx) = pokemon;
         ++idx;
     }
