@@ -11,6 +11,11 @@
 
 namespace PokeMaster
 {
+Pokemon::Pokemon(int id, std::string_view name) : m_id(id), m_name(name)
+{
+    // Do nothing
+}
+
 //! Calculate HP of Pokemon with Base, IV, EV, Level.
 void Pokemon::CalcHP(int _base, int _iv, int _ev, int _level)
 {

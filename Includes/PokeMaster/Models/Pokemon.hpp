@@ -44,6 +44,9 @@ class Pokemon
                         std::array<int, 6> _evs, int level, int _nature);
 
  public:
+    Pokemon() = default;
+    Pokemon(int id, std::string_view name);
+
     int GetId();
     std::string_view GetName();
     int GetLevel();
