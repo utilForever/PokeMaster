@@ -11,63 +11,6 @@
 
 namespace PokeMaster
 {
-
-//! Pokemon stats.
-enum STAT
-{
-	HP,
-	ATTACK,
-	DEFENSE,
-	SPECIAL_ATTACK,
-	SPECIAL_DEFENSE,
-	SPEED
-};
-
-//! Pokemon natures.
-//! First Digit of Nature Code indicates a stat which will be increased by 10%.
-//! Second Digit of Nature Code indicates a stat which will be decreased by 10%.
-//! Numbers 1~5 correspond to ATTACK, DEFENSE, SPECIAL_ATTACK, SPECIAL_DEFENSE and SPEED.
-enum NATURE
-{
-	NATURE_ADAMANT    = 13,        //!      +ATTACK            -SPECIAL_ATTACK
-	NATURE_BASHFUL    = 0 , 
-	NATURE_BOLD       = 21,        //!      +DEFENSE           -ATTACK
-	NATURE_BRAVE      = 15,        //!      +ATTACK            -SPEED
-	NATURE_CALM       = 41,        //!      +SPECIAL_DEFENSE   -ATTACK
-	NATURE_CAREFUL    = 43,        //!      +SPECIAL_DEFENSE   -SPECIAL_ATTACK
-	NATURE_DOCILE     = 0 ,
-	NATURE_GENTLE     = 42,        //!      +SPECIAL_DEFENSE   -DEFENSE
-	NATURE_HARDY      = 0 ,
-	NATURE_HASTY      = 52,        //!      +SPEED             -DEFENSE
-	NATURE_IMPISH     = 23,        //!      +DEFENSE           -SPECIAL_ATTACK
-	NATURE_JOLLY      = 53,        //!      +SPEED             -SPECIAL_ATTACK
-	NATURE_LAX        = 24,        //!      +DEFENSE           -SPECIAL_DEFENSE
-	NATURE_LONELY     = 12,        //!      +ATTACK            -DEFENSE
-	NATURE_MILD       = 32,        //!      +SPECIAL_ATTACK    -DEFENSE
-	NATURE_MODEST     = 31,        //!      +SPECIAL_ATTACK    -ATTACK
-	NATURE_NAIVE      = 54,        //!      +SPEED             -SPECIAL_DEFENSE
-	NATURE_NAUGHTY    = 14,        //!      +ATTACK            -SPECIAL_DEFENSE
-	NATURE_QUIET      = 35,        //!      +SPECIAL_ATTACK    -SPEED
-	NATURE_QUIRKY     = 0 ,
-	NATURE_RASH       = 34,        //!      +SPECIAL_ATTACK    -SPECIAL_DEFENSE
-	NATURE_RELAXED    = 25,        //!      +DEFENSE           -SPEED
-	NATURE_SASSY      = 45,        //!      +SPECIAL_DEFENSE   -SPEED
-	NATURE_SERIOUS    = 0 ,
-	NATURE_TIMID      = 52         //!      +SPEED             -ATTACK
-};
-
-//! Pokemon status.
-enum STATUS
-{
-	STATUS_HEALTHY,
-	STATUS_POISONED,
-	STATUS_BADPOISONED,
-	STATUS_BURNED,
-	STATUS_PARALYZED,
-	STATUS_ASLEEP,
-	STATUS_FROZEN
-};
-
 //! Calculate HP of Pokemon with Base, IV, EV, Level.
 void Pokemon::CalcHP(int _base, int _iv, int _ev, int _level) {
 	stats[0] = (int) floor(((_base * 2) + _iv + (_ev / 4)) * _level / 100) + 10;
