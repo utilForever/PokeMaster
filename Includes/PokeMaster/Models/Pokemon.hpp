@@ -5,8 +5,6 @@
 // personal capacity and are not conveying any rights to any intellectual
 // property of any third parties.
 
-#pragma once
-
 #ifndef POKEMASTER_POKEMON_HPP
 #define POKEMASTER_POKEMON_HPP
 
