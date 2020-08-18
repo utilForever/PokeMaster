@@ -28,6 +28,7 @@ enum class Stat
 //! and SPEED.
 enum class Nature
 {
+    INVALID,
     ADAMANT = 13,  //!      +ATTACK            -SPECIAL_ATTACK
     BASHFUL = 0,
     BOLD = 21,     //!      +DEFENSE           -ATTACK
@@ -58,6 +59,7 @@ enum class Nature
 //! Pokemon status.
 enum class Status
 {
+    NORMAL,
     HEALTHY,
     POISONED,
     BADLY_POISONED,
