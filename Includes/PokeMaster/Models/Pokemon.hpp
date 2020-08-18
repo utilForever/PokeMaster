@@ -8,13 +8,14 @@
 #ifndef POKEMASTER_POKEMON_HPP
 #define POKEMASTER_POKEMON_HPP
 
+#include <PokeMaster/Enums/PokemonEnums.hpp>
 #include <PokeMaster/Models/Ability.hpp>
 #include <PokeMaster/Models/Item.hpp>
 #include <PokeMaster/Models/Move.hpp>
 
+#include <array>
 #include <optional>
 #include <string_view>
-#include <array>
 
 namespace PokeMaster
 {
@@ -34,75 +35,71 @@ namespace PokeMaster
 //!
 class Pokemon
 {
-int type1, type2;
-int level;
+    //! Calculate HP of Pokemon with Base, IV, EV, and Level.
+    void CalcHP(int _base, int _iv, int _ev, int level);
 
-//! Pokemon has nature, which slightly modifies their stats.
-int nature;
+    //! Calculate stats (except HP) of Pokemon with Base, IV, EV, Level, and
+    //! Nature.
+    void CalcOtherStats(std::array<int, 6> _bases, std::array<int, 6> _ivs,
+                        std::array<int, 6> _evs, int level, int _nature);
 
-//! 6 stats are 'HP', 'ATTACK', 'DEFENSE', 'SPECIAL_ATTACK', 'SPECIAL_DEFENSE', and 'SPEED'.
-//! These values are calculated from various factors; Base, IV, EV and Nature.
-//! They can be accessed with stats[HP], stats[ATTACK], and so on.
-std::array<std::optional<int>, 6> bases;
-std::array<std::optional<int>, 6> ivs;
-std::array<std::optional<int>, 6> evs;
-std::array<std::optional<int>, 6> stats;
+ public:
+    int GetId();
+    std::string_view GetName();
+    int GetLevel();
+    Nature GetNature();
+    std::array<int, 6> GetBases();
+    std::array<int, 6> GetIvs();
+    std::array<int, 6> GetEvs();
+    std::array<int, 6> GetStats();
+    Item GetItem();
+    Ability GetAbility();
+    std::array<std::optional<Move>, 4> GetMoves();
+    Status GetStatus();
 
-Item item;
-Ability ability;
+    void SetId(int _id);
+    void SetName(std::string_view _name);
+    void SetLevel(int _level);
+    void SetNature(Nature _nature);
+    void SetBases(std::array<int, 6> _bases);
+    void SetIvs(std::array<int, 6> _ivs);
+    void SetEvs(std::array<int, 6> _evs);
+    void SetStats(std::array<int, 6> _stats);
+    void SetItem(Item _item);
+    void SetAbility(Ability _ability);
+    void SetMoves(std::array<std::optional<Move>, 4> _moves);
+    void SetStatus(Status _status);
 
-//! Pokemon can use up to 4 moves.
-std::array<std::optional<Move>, 4> moves;
+    //! Calculate stats with Base, IV, EV, Level, and Nature.
+    void CalcStats(std::array<int, 6> _bases, std::array<int, 6> _ivs,
+                   std::array<int, 6> _evs, int level, int _nature);
 
-int status;
+ private:
+    int m_id = -1;
+    std::string_view m_name;
 
-//! Calculate HP of Pokemon with Base, IV, EV, and Level.
-void CalcHP(int _base, int _iv, int _ev, int level);
+    int m_type1, m_type2;
+    int m_level = 1;
 
-//! Calculate stats (except HP) of Pokemon with Base, IV, EV, Level, and Nature.
-void CalcOtherStats(
-  std::array<std::optional<int>, 6> _bases,
-  std::array<std::optional<int>, 6> _ivs,
-  std::array<std::optional<int>, 6> _evs,
-  int level, int _nature);
+    //! 6 stats are 'HP', 'ATTACK', 'DEFENSE', 'SPECIAL_ATTACK',
+    //! 'SPECIAL_DEFENSE', and 'SPEED'. These values are calculated from various
+    //! factors; Base, IV, EV and Nature. They can be accessed with stats[HP],
+    //! stats[ATTACK], and so on.
+    std::array<int, 6> m_bases;
+    std::array<int, 6> m_ivs;
+    std::array<int, 6> m_evs;
+    std::array<int, 6> m_stats;
 
-//! ID, Name, Getter & Setter Functions.
-public:
-  int id;
-  std::string_view name;
-  int GetId();
-  std::string_view GetName();
-  int GetLevel();
-  int GetNature();
-  std::array<std::optional<int>, 6> GetBases();
-  std::array<std::optional<int>, 6> GetIvs();
-  std::array<std::optional<int>, 6> GetEvs();
-  std::array<std::optional<int>, 6> GetStats();
-  Item GetItem();
-  Ability GetAbility();
-  std::array<std::optional<Move>, 4> GetMoves();
-  int GetStatus();
+    //! Pokemon has nature, which slightly modifies their stats.
+    Nature m_nature = Nature::INVALID;
+    //! Pokemon can use up to 4 moves.
+    std::array<std::optional<Move>, 4> m_moves;
 
-  void SetId(int _id);
-  void SetName(std::string_view _name);
-  void SetLevel(int _level);
-  void SetNature(int _nature);
-  void SetBases(std::array<std::optional<int>, 6> _bases);
-  void SetIvs(std::array<std::optional<int>, 6> _ivs);
-  void SetEvs(std::array<std::optional<int>, 6> _evs);
-  void SetStats(std::array<std::optional<int>, 6> _stats);
-  void SetItem(Item _item);
-  void SetAbility(Ability _ability);
-  void SetMoves(std::array<std::optional<Move>, 4> _moves);
-  void SetStatus(int _status);
+    Item m_item;
+    Ability m_ability;
 
-  //! Calculate stats with Base, IV, EV, Level, and Nature.
-  void CalcStats(
-    std::array<std::optional<int>, 6> _bases,
-    std::array<std::optional<int>, 6> _ivs,
-    std::array<std::optional<int>, 6> _evs,
-    int level, int _nature);
-}; // class Pokemon
+    Status m_status = Status::NORMAL;
+};  // class Pokemon
 
 }  // namespace PokeMaster
 
