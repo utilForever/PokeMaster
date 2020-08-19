@@ -10,6 +10,30 @@
 
 namespace PokeMaster
 {
+//! Pokemon types.
+enum class Type
+{
+    INVALID,
+    NORMAL,
+    FIGHTING,
+    FLYING,
+    POISON,
+    GROUND,
+    ROCK,
+    BUG,
+    GHOST,
+    STEEL,
+    FIRE,
+    WATER,
+    GRASS,
+    ELECTRIC,
+    PSYCHIC,
+    ICE,
+    DRAGON,
+    DARK,
+    FAIRY
+};
+
 //! Pokemon stats.
 enum class Stat
 {
