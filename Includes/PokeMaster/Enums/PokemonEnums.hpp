@@ -37,12 +37,15 @@ enum class Type
 //! Pokemon stats.
 enum class Stat
 {
+    INVALID,
     HP,
     ATTACK,
     DEFENSE,
     SPECIAL_ATTACK,
     SPECIAL_DEFENSE,
-    SPEED
+    SPEED,
+    ACCURACY,
+    EVASION
 };
 
 //! Pokemon natures.
