@@ -44,21 +44,57 @@ class Pokemon
                         std::array<int, 6> _evs, int level, int _nature);
 
  public:
+    //! Default constructor.
     Pokemon() = default;
+
+    //! Constructs Pokémon with given \p id and \p name.
+    //! \param id The unique ID of Pokémon.
+    //! \param name The name of Pokémon.
     Pokemon(int id, std::string_view name);
 
-    int GetId();
-    std::string_view GetName();
-    int GetLevel();
-    Nature GetNature();
-    std::array<int, 6> GetBases();
-    std::array<int, 6> GetIvs();
-    std::array<int, 6> GetEvs();
-    std::array<int, 6> GetStats();
-    Item GetItem();
-    Ability GetAbility();
-    std::array<std::optional<Move>, 4> GetMoves();
-    Status GetStatus();
+    //! Returns the unique ID of Pokémon.
+    //! \return The unique ID of Pokémon.
+    [[nodiscard]] int GetID() const;
+
+    //! Returns the name of Pokémon.
+    //! \return The name of Pokémon.
+    [[nodiscard]] std::string_view GetName() const;
+
+    //! Returns the type 1 of Pokémon.
+    //! \return The type 1 of Pokémon.
+    [[nodiscard]] Type GetType1() const;
+
+    //! Returns the type 2 of Pokémon.
+    //! \return The type 2 of Pokémon.
+    [[nodiscard]] Type GetType2() const;
+
+    //! Returns the level of Pokémon.
+    //! \return The level of Pokémon.
+    [[nodiscard]] int GetLevel() const;
+
+    //! Returns a list of stats of Pokémon.
+    //! \return A list of stats of Pokémon.
+    [[nodiscard]] std::array<int, 6> GetStats() const;
+
+    //! Returns the nature of Pokémon.
+    //! \return The nature of Pokémon.
+    [[nodiscard]] Nature GetNature() const;
+
+    //! Returns the ability of Pokémon.
+    //! \return The ability of Pokémon.
+    [[nodiscard]] Ability GetAbility() const;
+
+    //! Returns the item of Pokémon.
+    //! \return The item of Pokémon.
+    [[nodiscard]] std::optional<Item> GetItem() const;
+
+    //! Returns the status of Pokémon.
+    //! \return The status of Pokémon.
+    [[nodiscard]] Status GetStatus() const;
+
+    //! Returns a list of moves of Pokémon.
+    //! \return A list of moves of Pokémon.
+    [[nodiscard]] std::array<std::optional<Move>, 4> GetMoves() const;
 
     void SetId(int _id);
     void SetName(std::string_view _name);
@@ -89,22 +125,18 @@ class Pokemon
     //! 'SPECIAL_DEFENSE', and 'SPEED'. These values are calculated from various
     //! factors; Base, IV, EV and Nature. They can be accessed with stats[HP],
     //! stats[ATTACK], and so on.
-    std::array<int, 6> m_bases;
-    std::array<int, 6> m_ivs;
-    std::array<int, 6> m_evs;
-    std::array<int, 6> m_stats;
+    std::array<int, 6> m_bases{};
+    std::array<int, 6> m_ivs{};
+    std::array<int, 6> m_evs{};
+    std::array<int, 6> m_stats{};
 
-    //! Pokemon has nature, which slightly modifies their stats.
     Nature m_nature = Nature::INVALID;
-    //! Pokemon can use up to 4 moves.
-    std::array<std::optional<Move>, 4> m_moves;
-
-    Item m_item;
-    Ability m_ability;
-
+    Ability m_ability{};
+    std::optional<Item> m_item;
     Status m_status = Status::NORMAL;
-};  // class Pokemon
 
+    std::array<std::optional<Move>, 4> m_moves;
+};
 }  // namespace PokeMaster
 
 #endif  // POKEMASTER_POKEMON_HPP

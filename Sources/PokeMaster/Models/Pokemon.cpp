@@ -16,6 +16,61 @@ Pokemon::Pokemon(int id, std::string_view name) : m_id(id), m_name(name)
     // Do nothing
 }
 
+int Pokemon::GetID() const
+{
+    return m_id;
+}
+
+std::string_view Pokemon::GetName() const
+{
+    return m_name;
+}
+
+Type Pokemon::GetType1() const
+{
+    return m_type1;
+}
+
+Type Pokemon::GetType2() const
+{
+    return m_type2;
+}
+
+int Pokemon::GetLevel() const
+{
+    return m_level;
+}
+
+std::array<int, 6> Pokemon::GetStats() const
+{
+    return m_stats;
+}
+
+Nature Pokemon::GetNature() const
+{
+    return m_nature;
+}
+
+Ability Pokemon::GetAbility() const
+{
+    return m_ability;
+}
+
+std::optional<Item> Pokemon::GetItem() const
+{
+    return m_item;
+}
+
+Status Pokemon::GetStatus() const
+{
+    return m_status;
+}
+
+std::array<std::optional<Move>, 4> Pokemon::GetMoves() const
+{
+    return m_moves;
+}
+
 //! Calculate HP of Pokemon with Base, IV, EV, Level.
 void Pokemon::CalcHP(int _base, int _iv, int _ev, int _level)
 {
@@ -43,56 +98,6 @@ void Pokemon::CalcOtherStats(std::array<int, 6> _bases, std::array<int, 6> _ivs,
     int stat_dec = (int)(_nature % 10);
     m_stats[stat_inc] = (int)floor(m_stats[stat_inc] * 1.1);
     m_stats[stat_dec] = (int)floor(m_stats[stat_dec] * 0.9);
-}
-
-//! ID, Name, Getter & Setter Functions.
-int Pokemon::GetId()
-{
-    return m_id;
-}
-std::string_view Pokemon::GetName()
-{
-    return m_name;
-}
-int Pokemon::GetLevel()
-{
-    return m_level;
-}
-Nature Pokemon::GetNature()
-{
-    return m_nature;
-}
-std::array<int, 6> Pokemon::GetBases()
-{
-    return m_bases;
-}
-std::array<int, 6> Pokemon::GetIvs()
-{
-    return m_ivs;
-}
-std::array<int, 6> Pokemon::GetEvs()
-{
-    return m_evs;
-}
-std::array<int, 6> Pokemon::GetStats()
-{
-    return m_stats;
-}
-Item Pokemon::GetItem()
-{
-    return m_item;
-}
-Ability Pokemon::GetAbility()
-{
-    return m_ability;
-}
-std::array<std::optional<Move>, 4> Pokemon::GetMoves()
-{
-    return m_moves;
-}
-Status Pokemon::GetStatus()
-{
-    return m_status;
 }
 
 void Pokemon::SetId(int _id)
