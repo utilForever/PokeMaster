@@ -81,7 +81,8 @@ class Pokemon
     int m_id = -1;
     std::string_view m_name;
 
-    int m_type1, m_type2;
+    Type m_type1 = Type::INVALID;
+    Type m_type2 = Type::INVALID;
     int m_level = 1;
 
     //! 6 stats are 'HP', 'ATTACK', 'DEFENSE', 'SPECIAL_ATTACK',
