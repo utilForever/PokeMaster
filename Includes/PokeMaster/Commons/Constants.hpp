@@ -16,9 +16,6 @@ constexpr int NUM_POKEMONS = 964;
 //! The number of moves.
 constexpr int NUM_MOVES = 746;
 
-//! The number of abilities.
-constexpr int NUM_ABILITIES = 293;
-
 //! The number of items.
 constexpr int NUM_ITEMS = 954;
 
