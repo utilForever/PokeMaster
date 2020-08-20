@@ -117,7 +117,7 @@ void Pokemon::CalcOtherStats()
 
     for (std::size_t i = 1; i < 6; i++)
     {
-        const Stat localStat = static_cast<Stat>(m_stats[i]);
+        const Stat localStat = static_cast<Stat>(i + 1);
         const double nature =
             natureStat1 == localStat ? 1.1 : natureStat2 == localStat ? 0.9 : 1.0;
 
