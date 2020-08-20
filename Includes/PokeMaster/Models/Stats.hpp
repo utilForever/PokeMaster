@@ -11,6 +11,7 @@
 #include <PokeMaster/Enums/PokemonEnums.hpp>
 
 #include <array>
+#include <initializer_list>
 
 namespace PokeMaster
 {
@@ -24,6 +25,13 @@ namespace PokeMaster
 class Stats
 {
  public:
+    //! Default constructor.
+    Stats() = default;
+
+    //! Constructs with given \p stats.
+    //! \param stats A list of stats.
+    Stats(std::initializer_list<int> stats);
+
     //! Operator overloading: operator[] with given \p idx.
     //! \param idx The index of stat list.
     //! \return The value of stat at \p idx.

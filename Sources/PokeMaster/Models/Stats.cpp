@@ -7,8 +7,22 @@
 
 #include <PokeMaster/Models/Stats.hpp>
 
+#include <cassert>
+
 namespace PokeMaster
 {
+Stats::Stats(std::initializer_list<int> stats)
+{
+    assert(stats.size() == 6);
+
+    std::size_t idx = 0;
+    for (const auto& stat : stats)
+    {
+        m_stats[idx] = stat;
+        ++idx;
+    }
+}
+
 int& Stats::operator[](std::size_t idx) noexcept
 {
     return m_stats[idx];
