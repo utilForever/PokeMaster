@@ -21,6 +21,7 @@
 #include <PokeMaster/Models/Item.hpp>
 #include <PokeMaster/Models/Move.hpp>
 #include <PokeMaster/Models/Pokemon.hpp>
+#include <PokeMaster/Models/Stats.hpp>
 #include <PokeMaster/PokeMaster.hpp>
 
 #endif  // POKE_MASTER_HPP
