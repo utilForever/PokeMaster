@@ -1,4 +1,4 @@
-// Copyright (c) 2020 PokeMaster Team
+﻿// Copyright (c) 2020 PokeMaster Team
 // Chris Ohk, Seungwoo Yoo, Seungwoo Lee, Eunsaem Ko
 
 // We are making my contributions/submissions to this project solely in our
@@ -7,6 +7,8 @@
 
 #ifndef POKEMASTER_POKEMON_ENUMS_HPP
 #define POKEMASTER_POKEMON_ENUMS_HPP
+
+#include <string_view>
 
 namespace PokeMaster
 {
@@ -83,6 +85,20 @@ enum class Nature
     SERIOUS
 };
 
+//! \brief An enumerator for identifying the ability of Pokémon.
+enum class Ability
+{
+#define X(a) a,
+#include "PokeMaster/Enums/Ability.def"
+#undef X
+};
+
+const std::string_view ABILITY_STR[] = {
+#define X(a) #a,
+#include "PokeMaster/Enums/Ability.def"
+#undef X
+};
+
 //! Pokemon status.
 enum class Status
 {
@@ -95,6 +111,39 @@ enum class Status
     ASLEEP,
     FROZEN
 };
+
+template <class T>
+T StrToEnum(const std::string_view&);
+template <class T>
+std::string_view EnumToStr(T);
+
+#define STR2ENUM(TYPE, ARRAY)                                                \
+    template <>                                                              \
+    inline TYPE StrToEnum<TYPE>(const std::string_view& str)                 \
+    {                                                                        \
+        for (std::size_t i = 0; i < (sizeof(ARRAY) / sizeof(ARRAY[0])); ++i) \
+        {                                                                    \
+            if (ARRAY[i] == str)                                             \
+            {                                                                \
+                return TYPE(i);                                              \
+            }                                                                \
+        }                                                                    \
+                                                                             \
+        return TYPE(0);                                                      \
+    }
+
+#define ENUM2STR(TYPE, ARRAY)                       \
+    template <>                                     \
+    inline std::string_view EnumToStr<TYPE>(TYPE v) \
+    {                                               \
+        return ARRAY[static_cast<int>(v)];          \
+    }
+
+#define ENUM_AND_STR(TYPE, ARRAY) \
+    STR2ENUM(TYPE, ARRAY)         \
+    ENUM2STR(TYPE, ARRAY)
+
+ENUM_AND_STR(Ability, ABILITY_STR)
 }  // namespace PokeMaster
 
 #endif  // POKEMASTER_POKEMON_HPP
