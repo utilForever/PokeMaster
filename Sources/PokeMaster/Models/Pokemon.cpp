@@ -17,6 +17,19 @@ Pokemon::Pokemon(int id, std::string_view name) : m_id(id), m_name(name)
     // Do nothing
 }
 
+Pokemon::Pokemon(int id, std::string_view name, int level, Stats bases, Stats ivs,
+                 Stats evs, Nature nature)
+    : m_id(id),
+      m_name(name),
+      m_level(level),
+      m_bases(bases),
+      m_ivs(ivs),
+      m_evs(evs),
+      m_nature(nature)
+{
+    CalcStats();
+}
+
 int Pokemon::GetID() const
 {
     return m_id;

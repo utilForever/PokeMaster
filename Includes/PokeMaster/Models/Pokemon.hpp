@@ -43,6 +43,17 @@ class Pokemon
     //! \param name The name of Pokémon.
     Pokemon(int id, std::string_view name);
 
+    //! Constructs Pokémon with various arguments.
+    //! \param id The unique ID of Pokémon.
+    //! \param name The name of Pokémon.
+    //! \param level The level of Pokémon.
+    //! \param bases The base stats of Pokémon.
+    //! \param ivs The IV stats of Pokémon.
+    //! \param evs The EV stats of Pokémon.
+    //! \param nature The nature of Pokémon.
+    Pokemon(int id, std::string_view name, int level, Stats bases, Stats ivs, Stats evs,
+            Nature nature);
+
     //! Returns the unique ID of Pokémon.
     //! \return The unique ID of Pokémon.
     [[nodiscard]] int GetID() const;
