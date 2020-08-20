@@ -9,7 +9,6 @@
 #define POKEMASTER_POKEMON_HPP
 
 #include <PokeMaster/Enums/PokemonEnums.hpp>
-#include <PokeMaster/Models/Ability.hpp>
 #include <PokeMaster/Models/Item.hpp>
 #include <PokeMaster/Models/Move.hpp>
 
@@ -96,19 +95,6 @@ class Pokemon
     //! \return A list of moves of Pokémon.
     [[nodiscard]] std::array<std::optional<Move>, 4> GetMoves() const;
 
-    void SetId(int _id);
-    void SetName(std::string_view _name);
-    void SetLevel(int _level);
-    void SetNature(Nature _nature);
-    void SetBases(std::array<int, 6> _bases);
-    void SetIvs(std::array<int, 6> _ivs);
-    void SetEvs(std::array<int, 6> _evs);
-    void SetStats(std::array<int, 6> _stats);
-    void SetItem(Item _item);
-    void SetAbility(Ability _ability);
-    void SetMoves(std::array<std::optional<Move>, 4> _moves);
-    void SetStatus(Status _status);
-
     //! Calculate stats with Base, IV, EV, Level, and Nature.
     void CalcStats(std::array<int, 6> _bases, std::array<int, 6> _ivs,
                    std::array<int, 6> _evs, int level, int _nature);
@@ -131,7 +117,7 @@ class Pokemon
     std::array<int, 6> m_stats{};
 
     Nature m_nature = Nature::INVALID;
-    Ability m_ability{};
+    Ability m_ability = Ability::INVALID;
     std::optional<Item> m_item;
     Status m_status = Status::NORMAL;
 
