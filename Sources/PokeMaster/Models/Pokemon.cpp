@@ -8,6 +8,7 @@
 #include <PokeMaster/Commons/Constants.hpp>
 #include <PokeMaster/Models/Pokemon.hpp>
 
+#include <algorithm>
 #include <cmath>
 
 namespace PokeMaster
