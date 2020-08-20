@@ -12,7 +12,7 @@
 
 namespace PokeMaster
 {
-//! Pokemon types.
+//! \brief An enumerator for identifying the type of Pokémon.
 enum class Type
 {
     INVALID,
@@ -36,7 +36,7 @@ enum class Type
     FAIRY
 };
 
-//! Pokemon stats.
+//! \brief An enumerator for identifying the stat of Pokémon.
 enum class Stat
 {
     INVALID,
@@ -50,7 +50,7 @@ enum class Stat
     EVASION
 };
 
-//! Pokemon natures.
+//! \brief An enumerator for identifying the nature of Pokémon.
 //! First digit of nature code indicates a stat which will be increased by 10%.
 //! Second digit of nature code indicates a stat which will be decreased by 10%.
 //! Numbers 1~5 correspond to ATTACK, DEFENSE, SPECIAL_ATTACK, SPECIAL_DEFENSE
@@ -99,7 +99,7 @@ const std::string_view ABILITY_STR[] = {
 #undef X
 };
 
-//! Pokemon status.
+//! \brief An enumerator for identifying the status of Pokémon.
 enum class Status
 {
     NORMAL,
