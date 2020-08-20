@@ -11,8 +11,8 @@
 #include <PokeMaster/Enums/PokemonEnums.hpp>
 #include <PokeMaster/Models/Item.hpp>
 #include <PokeMaster/Models/Move.hpp>
+#include <PokeMaster/Models/Stats.hpp>
 
-#include <array>
 #include <optional>
 #include <string_view>
 
@@ -34,14 +34,6 @@ namespace PokeMaster
 //!
 class Pokemon
 {
-    //! Calculate HP of Pokemon with Base, IV, EV, and Level.
-    void CalcHP(int _base, int _iv, int _ev, int level);
-
-    //! Calculate stats (except HP) of Pokemon with Base, IV, EV, Level, and
-    //! Nature.
-    void CalcOtherStats(std::array<int, 6> _bases, std::array<int, 6> _ivs,
-                        std::array<int, 6> _evs, int level, int _nature);
-
  public:
     //! Default constructor.
     Pokemon() = default;
@@ -73,7 +65,7 @@ class Pokemon
 
     //! Returns a list of stats of Pokémon.
     //! \return A list of stats of Pokémon.
-    [[nodiscard]] std::array<int, 6> GetStats() const;
+    [[nodiscard]] Stats GetStats() const;
 
     //! Returns the nature of Pokémon.
     //! \return The nature of Pokémon.
@@ -95,9 +87,15 @@ class Pokemon
     //! \return A list of moves of Pokémon.
     [[nodiscard]] std::array<std::optional<Move>, 4> GetMoves() const;
 
-    //! Calculate stats with Base, IV, EV, Level, and Nature.
-    void CalcStats(std::array<int, 6> _bases, std::array<int, 6> _ivs,
-                   std::array<int, 6> _evs, int level, int _nature);
+    //! Calculates stats of Pokémon with base, IV, EV, level and nature.
+    void CalcStats();
+
+    //! Calculates HP of Pokémon with base, IV, EV and level.
+    void CalcHP();
+
+    //! Calculate stats except HP of Pokémon with base, IV, EV, level and
+    //! nature.
+    void CalcOtherStats();
 
  private:
     int m_id = -1;
@@ -111,10 +109,10 @@ class Pokemon
     //! 'SPECIAL_DEFENSE', and 'SPEED'. These values are calculated from various
     //! factors; Base, IV, EV and Nature. They can be accessed with stats[HP],
     //! stats[ATTACK], and so on.
-    std::array<int, 6> m_bases{};
-    std::array<int, 6> m_ivs{};
-    std::array<int, 6> m_evs{};
-    std::array<int, 6> m_stats{};
+    Stats m_bases;
+    Stats m_ivs;
+    Stats m_evs;
+    Stats m_stats;
 
     Nature m_nature = Nature::INVALID;
     Ability m_ability = Ability::INVALID;

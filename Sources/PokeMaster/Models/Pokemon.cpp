@@ -5,6 +5,7 @@
 // personal capacity and are not conveying any rights to any intellectual
 // property of any third parties.
 
+#include <PokeMaster/Commons/Constants.hpp>
 #include <PokeMaster/Models/Pokemon.hpp>
 
 #include <cmath>
@@ -41,7 +42,7 @@ int Pokemon::GetLevel() const
     return m_level;
 }
 
-std::array<int, 6> Pokemon::GetStats() const
+Stats Pokemon::GetStats() const
 {
     return m_stats;
 }
@@ -71,41 +72,47 @@ std::array<std::optional<Move>, 4> Pokemon::GetMoves() const
     return m_moves;
 }
 
-//! Calculate HP of Pokemon with Base, IV, EV, Level.
-void Pokemon::CalcHP(int _base, int _iv, int _ev, int _level)
+void Pokemon::CalcStats()
 {
-    m_stats[0] =
-        (int)floor(((_base * 2) + _iv + (_ev / 4)) * _level / 100) + 10;
-    if (_base == 1)
-    {
-        m_stats[0] = 1;
-    }  //! For Shedinja (Always has HP 1)
+    CalcHP();
+    CalcOtherStats();
 }
 
-//! Calculate stats (except HP) of Pokemon with Base, IV, EV, Level, Nature.
-void Pokemon::CalcOtherStats(std::array<int, 6> _bases, std::array<int, 6> _ivs,
-                             std::array<int, 6> _evs, int _level, int _nature)
+void Pokemon::CalcHP()
 {
-    for (int i = 1; i < 6; i++)
+    m_stats[Stat::HP] =
+        static_cast<int>(std::floor(((m_bases[Stat::HP] * 2) + m_ivs[Stat::HP] +
+                                     std::floor(m_evs[Stat::HP] / 4)) *
+                                    m_level / 100)) +
+        m_level + 10;
+
+    // For 'Shedinja' (Always HP is 1)
+    if (m_bases[Stat::HP] == 1)
     {
-        m_stats[i] = (int)floor(((_bases[i] * 2) + _ivs[i] + (_evs[i] / 4)) *
-                                _level / 100) +
-                     5;
+        m_stats[Stat::HP] = 1;
     }
-
-    //! Modifies stats by Nature.
-    int stat_inc = (int)(_nature / 10);
-    int stat_dec = (int)(_nature % 10);
-    m_stats[stat_inc] = (int)floor(m_stats[stat_inc] * 1.1);
-    m_stats[stat_dec] = (int)floor(m_stats[stat_dec] * 0.9);
 }
 
-//! Calculate stats with Base, IV, EV, Level, and Nature.
-void Pokemon::CalcStats(std::array<int, 6> _bases, std::array<int, 6> _ivs,
-                        std::array<int, 6> _evs, int _level, int _nature)
+void Pokemon::CalcOtherStats()
 {
-    CalcHP(_bases[0], _ivs[0], _evs[0], _level);
-    CalcOtherStats(_bases, _ivs, _evs, _level, _nature);
-}
+    const auto iter = std::find_if(std::begin(NATURES), std::end(NATURES),
+                                   [=](const std::tuple<Nature, Stat, Stat>& val) {
+                                       return m_nature == std::get<0>(val);
+                                   });
+    const Stat natureStat1 = std::get<1>(*iter);
+    const Stat natureStat2 = std::get<2>(*iter);
 
+    for (std::size_t i = 1; i < 6; i++)
+    {
+        const Stat localStat = static_cast<Stat>(m_stats[i]);
+        const double nature =
+            natureStat1 == localStat ? 1.1 : natureStat2 == localStat ? 0.9 : 1.0;
+
+        m_stats[i] = static_cast<int>(std::floor(
+            (std::floor(((m_bases[i] * 2) + m_ivs[i] + std::floor(m_evs[i] / 4)) *
+                        m_level / 100) +
+             5) *
+            nature));
+    }
+}
 }  // namespace PokeMaster
