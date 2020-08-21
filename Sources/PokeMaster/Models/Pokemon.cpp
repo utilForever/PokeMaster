@@ -99,12 +99,6 @@ void Pokemon::CalcHP()
                                      std::floor(m_evs[Stat::HP] / 4)) *
                                     m_level / 100)) +
         m_level + 10;
-
-    // For 'Shedinja' (Always HP is 1)
-    if (m_bases[Stat::HP] == 1)
-    {
-        m_stats[Stat::HP] = 1;
-    }
 }
 
 void Pokemon::CalcOtherStats()
