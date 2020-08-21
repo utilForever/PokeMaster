@@ -15,7 +15,7 @@ TEST_CASE("[PokemonManager] - GetAllPokemons")
     auto pokemons = PokemonManager::GetInstance().GetAllPokemons();
     for (auto& pokemon : pokemons)
     {
-        CHECK_NE(pokemon.id, 0);
-        CHECK_FALSE(pokemon.name.empty());
+        CHECK_NE(pokemon.GetID(), 0);
+        CHECK_FALSE(pokemon.GetName().empty());
     }
 }
