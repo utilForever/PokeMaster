@@ -128,7 +128,7 @@ class Pokemon
     Nature m_nature = Nature::INVALID;
     Ability m_ability = Ability::INVALID;
     std::optional<Item> m_item;
-    Status m_status = Status::NORMAL;
+    Status m_status = Status::HEALTHY;
 
     std::array<std::optional<Move>, 4> m_moves;
 };
