@@ -20,6 +20,20 @@ TEST_CASE("[Pokemon] - Stats")
                             { 252, 4, 0, 252, 0, 0 },
                             Nature::QUIET };
 
+    CHECK_EQ(pokemon1.GetID(), 1);
+    CHECK_EQ(pokemon1.GetName(), "Abomasnow");
+    CHECK_EQ(pokemon1.GetType1(), Type::INVALID);
+    CHECK_EQ(pokemon1.GetType2(), Type::INVALID);
+    CHECK_EQ(pokemon1.GetLevel(), 50);
+    CHECK_EQ(pokemon1.GetNature(), Nature::QUIET);
+    CHECK_EQ(pokemon1.GetAbility(), Ability::INVALID);
+    CHECK_EQ(pokemon1.GetItem(), std::nullopt);
+    CHECK_EQ(pokemon1.GetStatus(), Status::HEALTHY);
+    CHECK_EQ(pokemon1.GetMoves()[0], std::nullopt);
+    CHECK_EQ(pokemon1.GetMoves()[1], std::nullopt);
+    CHECK_EQ(pokemon1.GetMoves()[2], std::nullopt);
+    CHECK_EQ(pokemon1.GetMoves()[3], std::nullopt);
+
     Stats stats = pokemon1.GetStats();
     CHECK_EQ(stats[Stat::HP], 197);
     CHECK_EQ(stats[Stat::ATTACK], 113);
