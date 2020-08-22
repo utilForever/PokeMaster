@@ -55,6 +55,7 @@ inline std::array<std::tuple<Nature, Stat, Stat>, NUM_NATURES> NATURES = {
     std::make_tuple(Nature::SASSY, Stat::SPECIAL_DEFENSE, Stat::SPEED),
     std::make_tuple(Nature::SERIOUS, Stat::INVALID, Stat::INVALID)
 };
+  
 }  // namespace PokeMaster
 
 #endif  // POKEMASTER_CONSTANTS_HPP
