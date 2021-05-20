@@ -35,9 +35,7 @@ The class is licensed under the [MIT License](http://opensource.org/licenses/MIT
 Copyright &copy; 2020 PokeMaster Team
 
   * [Chris Ohk](http://www.github.com/utilForever)
-  * [Seungwoo Yoo](https://github.com/DveloperY0115)
-  * [Seungwoo Lee](https://github.com/smilelee9)
-  * [Eunsaem Ko](https://github.com/issaem)
+  * [Won Park](https://github.com/circle-oo)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
