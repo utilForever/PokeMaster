@@ -19,8 +19,8 @@ def main():
     header = os.path.join(dir_name, "../Includes/PokeMaster/PokeMaster.hpp")
     header_tmp = header + ".tmp"
     with open(header_tmp, "w") as header_file:
-        header_file.write("""// Copyright (c) 2020 PokeMaster Team
-// Chris Ohk, Seungwoo Yoo, Seungwoo Lee, Eunsaem Ko
+        header_file.write("""// Copyright (c) 2021 PokeMaster Team
+// Chris Ohk, Won Park
 
 // We are making my contributions/submissions to this project solely in our
 // personal capacity and are not conveying any rights to any intellectual

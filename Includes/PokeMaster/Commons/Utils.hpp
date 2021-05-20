@@ -1,5 +1,5 @@
-﻿// Copyright (c) 2020 PokeMaster Team
-// Chris Ohk, Seungwoo Yoo, Seungwoo Lee, Eunsaem Ko
+﻿// Copyright (c) 2021 PokeMaster Team
+// Chris Ohk, Won Park
 
 // We are making my contributions/submissions to this project solely in our
 // personal capacity and are not conveying any rights to any intellectual
