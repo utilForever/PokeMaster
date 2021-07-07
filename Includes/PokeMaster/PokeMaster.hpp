@@ -14,7 +14,6 @@
 #include <PokeMaster/Enums/PokemonEnums.hpp>
 #include <PokeMaster/Helpers/ItemHelpers.hpp>
 #include <PokeMaster/Helpers/MoveHelpers.hpp>
-#include <PokeMaster/Managers/PokemonManager.hpp>
 #include <PokeMaster/Models/Battle.hpp>
 #include <PokeMaster/Models/Pokemon.hpp>
 #include <PokeMaster/Models/Stats.hpp>
