@@ -24,5 +24,6 @@
 #include <PokeMaster/Models/Pokemon.hpp>
 #include <PokeMaster/Models/Stats.hpp>
 #include <PokeMaster/PokeMaster.hpp>
+#include <PokeMaster/Systems/Game.hpp>
 
 #endif  // POKE_MASTER_HPP
