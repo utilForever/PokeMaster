@@ -12,6 +12,7 @@
 #include <PokeMaster/Commons/Utils.hpp>
 #include <PokeMaster/Components/Name.hpp>
 #include <PokeMaster/Enums/PokemonEnums.hpp>
+#include <PokeMaster/Helpers/ItemHelpers.hpp>
 #include <PokeMaster/Loaders/MoveLoader.hpp>
 #include <PokeMaster/Loaders/PokemonLoader.hpp>
 #include <PokeMaster/Managers/MoveManager.hpp>
