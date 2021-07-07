@@ -13,6 +13,7 @@
 #include <PokeMaster/Components/Name.hpp>
 #include <PokeMaster/Enums/PokemonEnums.hpp>
 #include <PokeMaster/Helpers/ItemHelpers.hpp>
+#include <PokeMaster/Helpers/MoveHelpers.hpp>
 #include <PokeMaster/Loaders/PokemonLoader.hpp>
 #include <PokeMaster/Managers/PokemonManager.hpp>
 #include <PokeMaster/Models/Battle.hpp>
