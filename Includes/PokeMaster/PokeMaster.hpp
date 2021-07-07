@@ -10,6 +10,7 @@
 
 #include <PokeMaster/Commons/Constants.hpp>
 #include <PokeMaster/Commons/Utils.hpp>
+#include <PokeMaster/Components/Name.hpp>
 #include <PokeMaster/Enums/PokemonEnums.hpp>
 #include <PokeMaster/Loaders/ItemLoader.hpp>
 #include <PokeMaster/Loaders/MoveLoader.hpp>
