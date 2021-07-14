@@ -15,7 +15,6 @@
 #include <PokeMaster/Helpers/ItemHelpers.hpp>
 #include <PokeMaster/Helpers/MoveHelpers.hpp>
 #include <PokeMaster/Models/Battle.hpp>
-#include <PokeMaster/Models/Pokemon.hpp>
 #include <PokeMaster/PokeMaster.hpp>
 #include <PokeMaster/Systems/Game.hpp>
 
