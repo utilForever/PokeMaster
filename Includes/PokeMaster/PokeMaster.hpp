@@ -11,6 +11,7 @@
 #include <PokeMaster/Commons/Constants.hpp>
 #include <PokeMaster/Commons/Utils.hpp>
 #include <PokeMaster/Components/Name.hpp>
+#include <PokeMaster/Components/Types.hpp>
 #include <PokeMaster/Enums/PokemonEnums.hpp>
 #include <PokeMaster/Helpers/ItemHelpers.hpp>
 #include <PokeMaster/Helpers/MoveHelpers.hpp>
