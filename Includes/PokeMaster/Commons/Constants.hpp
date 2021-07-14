@@ -15,6 +15,9 @@
 
 namespace PokeMaster
 {
+//! The number of stats.
+constexpr int NUM_STATS = 6;
+
 //! The number of pokemons.
 constexpr int NUM_POKEMONS = 964;
 
