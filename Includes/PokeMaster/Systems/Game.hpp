@@ -8,6 +8,8 @@
 #ifndef POKEMASTER_GAME_HPP
 #define POKEMASTER_GAME_HPP
 
+#include <entt/entt.hpp>
+
 namespace PokeMaster
 {
 //!
@@ -18,6 +20,12 @@ namespace PokeMaster
 //!
 class Game
 {
+ public:
+    //! Constructs new game and loads related data.
+    Game();
+
+ private:
+    entt::registry m_registry;
 };
 }  // namespace PokeMaster
 
