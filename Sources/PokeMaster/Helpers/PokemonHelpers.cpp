@@ -16,11 +16,11 @@ namespace PokeMaster::Pokemon
 {
 void LoadData(entt::registry& registry)
 {
-    // Read Item data from JSON file
-    std::ifstream moveFile(RESOURCES_DIR "pokemon.json");
+    // Read pokemon data from JSON file
+    std::ifstream pokemonFile(RESOURCES_DIR "pokemon.json");
     nlohmann::json j;
 
-    moveFile >> j;
+    pokemonFile >> j;
 
     for (auto& data : j)
     {
@@ -28,6 +28,6 @@ void LoadData(entt::registry& registry)
         registry.emplace<Name>(entity, data["identifier"].get<std::string>());
     }
 
-    moveFile.close();
+    pokemonFile.close();
 }
 }  // namespace PokeMaster::Pokemon
