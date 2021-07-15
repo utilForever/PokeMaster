@@ -27,6 +27,7 @@ struct Stats
     std::array<int, NUM_STATS> m_baseValues;
     std::array<int, NUM_STATS> m_individualValues;
     std::array<int, NUM_STATS> m_effortValues;
+    std::array<int, NUM_STATS> m_values;
 };
 }  // namespace PokeMaster
 
