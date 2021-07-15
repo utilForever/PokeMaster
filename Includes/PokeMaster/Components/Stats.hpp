@@ -24,10 +24,10 @@ namespace PokeMaster
 //!
 struct Stats
 {
-    std::array<int, NUM_STATS> m_baseValues;
-    std::array<int, NUM_STATS> m_individualValues;
-    std::array<int, NUM_STATS> m_effortValues;
-    std::array<int, NUM_STATS> m_values;
+    std::array<int, NUM_STATS> baseValues;
+    std::array<int, NUM_STATS> individualValues;
+    std::array<int, NUM_STATS> effortValues;
+    std::array<int, NUM_STATS> values;
 };
 }  // namespace PokeMaster
 
