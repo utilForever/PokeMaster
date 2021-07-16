@@ -10,6 +10,7 @@
 
 #include <PokeMaster/Commons/Constants.hpp>
 #include <PokeMaster/Commons/Utils.hpp>
+#include <PokeMaster/Components/Index.hpp>
 #include <PokeMaster/Components/Name.hpp>
 #include <PokeMaster/Components/Stats.hpp>
 #include <PokeMaster/Components/Types.hpp>
