@@ -34,4 +34,9 @@ std::optional<entt::entity> Game::FindPokemonByName(std::string_view&& name)
 
     return std::nullopt;
 }
+
+std::tuple<Type, Type> Game::GetPokemonTypes(entt::entity entity)
+{
+    return Pokemon::GetTypes(m_registry, entity);
+}
 }  // namespace PokeMaster

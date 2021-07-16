@@ -8,6 +8,8 @@
 #ifndef POKEMASTER_GAME_HPP
 #define POKEMASTER_GAME_HPP
 
+#include <PokeMaster/Enums/PokemonEnums.hpp>
+
 #include <entt/entt.hpp>
 
 #include <optional>
@@ -30,6 +32,11 @@ class Game
     //! \param name The pokemon name to find.
     //! \return A pokemon entity that matches \p name.
     [[nodiscard]] std::optional<entt::entity> FindPokemonByName(std::string_view&& name);
+
+    //! Returns the types of the pokemon.
+    //! \param entity A pokemon entity.
+    //! \return The types of the pokemon.
+    std::tuple<Type, Type> GetPokemonTypes(entt::entity entity);
 
  private:
     entt::registry m_registry;
