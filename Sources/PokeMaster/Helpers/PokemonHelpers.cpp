@@ -7,6 +7,7 @@
 
 #include <PokeMaster/Commons/Constants.hpp>
 #include <PokeMaster/Components/Index.hpp>
+#include <PokeMaster/Components/Level.hpp>
 #include <PokeMaster/Components/Name.hpp>
 #include <PokeMaster/Components/Stats.hpp>
 #include <PokeMaster/Components/Types.hpp>
@@ -93,6 +94,27 @@ void LoadData(entt::registry& registry)
     pokemonFile.close();
     pokemonStatsFile.close();
     pokemonTypesFile.close();
+}
+
+entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
+                 std::array<int, NUM_STATS> individualValues,
+                 std::array<int, NUM_STATS> effortValues)
+{
+    entt::entity pokemon = FindByName(registry, std::move(name)).value();
+    entt::entity newPokemon = registry.create();
+
+    auto view = registry.view<Name, Types, Stats>();
+    auto& pokemonName = view.get<Name>(pokemon);
+    auto& pokemonTypes = view.get<Types>(pokemon);
+    auto& pokemonStats = view.get<Stats>(pokemon);
+
+    registry.emplace<Name>(newPokemon, pokemonName.name);
+    registry.emplace<Level>(newPokemon, level);
+    registry.emplace<Types>(newPokemon, pokemonTypes.type1, pokemonTypes.type2);
+    registry.replace<Stats>(newPokemon, pokemonStats.baseValues, individualValues,
+                            effortValues);
+
+    return newPokemon;
 }
 
 std::optional<entt::entity> FindByName(entt::registry& registry, std::string_view&& name)

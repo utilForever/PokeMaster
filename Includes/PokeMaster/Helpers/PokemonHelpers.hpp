@@ -8,6 +8,7 @@
 #ifndef POKEMASTER_POKEMON_HELPERS_HPP
 #define POKEMASTER_POKEMON_HELPERS_HPP
 
+#include <PokeMaster/Commons/Constants.hpp>
 #include <PokeMaster/Enums/PokemonEnums.hpp>
 
 #include <entt/entt.hpp>
@@ -32,6 +33,17 @@ namespace PokeMaster::Pokemon
 //!
 //! \param registry A registry of the entity-component system.
 void LoadData(entt::registry& registry);
+
+//! Adds a pokemon for the player.
+//! \param registry A registry of the entity-component system.
+//! \param name The name of the pokemon.
+//! \param level The level of the pokemon.
+//! \param individualValues A list of individual values.
+//! \param effortValues A list of effort values.
+//! \return An added pokemon entity.
+entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
+                 std::array<int, NUM_STATS> individualValues,
+                 std::array<int, NUM_STATS> effortValues);
 
 //! Returns a pokemon entity that matches \p name.
 //! \param registry A registry of the entity-component system.
