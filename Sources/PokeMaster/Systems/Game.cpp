@@ -11,6 +11,8 @@
 #include <PokeMaster/Helpers/PokemonHelpers.hpp>
 #include <PokeMaster/Systems/Game.hpp>
 
+#include <utility>
+
 namespace PokeMaster
 {
 Game::Game()
@@ -22,17 +24,7 @@ Game::Game()
 
 std::optional<entt::entity> Game::FindPokemonByName(std::string_view&& name)
 {
-    const auto view = m_registry.view<Name>();
-
-    for (auto [entity, pokemonName] : view.each())
-    {
-        if (name == pokemonName.name)
-        {
-            return entity;
-        }
-    }
-
-    return std::nullopt;
+    return Pokemon::FindByName(m_registry, std::move(name));
 }
 
 std::tuple<Type, Type> Game::GetPokemonTypes(entt::entity entity)
