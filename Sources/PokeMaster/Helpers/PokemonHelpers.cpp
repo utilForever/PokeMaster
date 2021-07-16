@@ -95,6 +95,21 @@ void LoadData(entt::registry& registry)
     pokemonTypesFile.close();
 }
 
+std::optional<entt::entity> FindByName(entt::registry& registry, std::string_view&& name)
+{
+    const auto view = registry.view<Name>();
+
+    for (auto [entity, pokemonName] : view.each())
+    {
+        if (name == pokemonName.name)
+        {
+            return entity;
+        }
+    }
+
+    return std::nullopt;
+}
+
 std::tuple<Type, Type> GetTypes(entt::registry& registry, entt::entity entity)
 {
     auto view = registry.view<Types>();

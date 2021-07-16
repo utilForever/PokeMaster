@@ -12,6 +12,7 @@
 
 #include <entt/entt.hpp>
 
+#include <optional>
 #include <tuple>
 
 namespace PokeMaster::Pokemon
@@ -31,6 +32,13 @@ namespace PokeMaster::Pokemon
 //!
 //! \param registry A registry of the entity-component system.
 void LoadData(entt::registry& registry);
+
+//! Returns a pokemon entity that matches \p name.
+//! \param registry A registry of the entity-component system.
+//! \param name The pokemon name to find.
+//! \return A pokemon entity that matches \p name.
+[[nodiscard]] std::optional<entt::entity> FindByName(entt::registry& registry,
+                                                     std::string_view&& name);
 
 //! Returns the types of the pokemon.
 //! \param registry A registry of the entity-component system.
