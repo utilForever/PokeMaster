@@ -10,6 +10,8 @@
 
 #include <entt/entt.hpp>
 
+#include <optional>
+
 namespace PokeMaster
 {
 //!
@@ -23,6 +25,11 @@ class Game
  public:
     //! Constructs new game and loads related data.
     Game();
+
+    //! Returns a pokemon entity that matches \p name.
+    //! \param name The pokemon name to find.
+    //! \return A pokemon entity that matches \p name.
+    [[nodiscard]] std::optional<entt::entity> FindPokemonByName(std::string_view&& name);
 
  private:
     entt::registry m_registry;
