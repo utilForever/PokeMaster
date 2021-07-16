@@ -8,6 +8,7 @@
 #ifndef POKEMASTER_GAME_HPP
 #define POKEMASTER_GAME_HPP
 
+#include <PokeMaster/Commons/Constants.hpp>
 #include <PokeMaster/Enums/PokemonEnums.hpp>
 
 #include <entt/entt.hpp>
@@ -27,6 +28,16 @@ class Game
  public:
     //! Constructs new game and loads related data.
     Game();
+
+    //! Adds a pokemon for the player.
+    //! \param name The name of the pokemon.
+    //! \param level The level of the pokemon.
+    //! \param individualValues A list of individual values.
+    //! \param effortValues A list of effort values.
+    //! \return An added pokemon entity.
+    entt::entity AddPokemon(std::string_view name, int level,
+                            std::array<int, NUM_STATS> individualValues,
+                            std::array<int, NUM_STATS> effortValues);
 
     //! Returns a pokemon entity that matches \p name.
     //! \param name The pokemon name to find.
