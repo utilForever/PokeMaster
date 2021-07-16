@@ -94,4 +94,12 @@ void LoadData(entt::registry& registry)
     pokemonStatsFile.close();
     pokemonTypesFile.close();
 }
+
+std::tuple<Type, Type> GetTypes(entt::registry& registry, entt::entity entity)
+{
+    auto view = registry.view<Types>();
+    auto& types = view.get<Types>(entity);
+
+    return std::make_tuple(types.type1, types.type2);
+}
 }  // namespace PokeMaster::Pokemon

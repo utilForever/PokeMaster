@@ -8,7 +8,11 @@
 #ifndef POKEMASTER_POKEMON_HELPERS_HPP
 #define POKEMASTER_POKEMON_HELPERS_HPP
 
+#include <PokeMaster/Enums/PokemonEnums.hpp>
+
 #include <entt/entt.hpp>
+
+#include <tuple>
 
 namespace PokeMaster::Pokemon
 {
@@ -27,6 +31,12 @@ namespace PokeMaster::Pokemon
 //!
 //! \param registry A registry of the entity-component system.
 void LoadData(entt::registry& registry);
+
+//! Returns the types of the pokemon.
+//! \param registry A registry of the entity-component system.
+//! \param entity A pokemon entity.
+//! \return The types of the pokemon.
+std::tuple<Type, Type> GetTypes(entt::registry& registry, entt::entity entity);
 }  // namespace PokeMaster::Pokemon
 
 #endif  // POKEMASTER_POKEMON_HELPERS_HPP
