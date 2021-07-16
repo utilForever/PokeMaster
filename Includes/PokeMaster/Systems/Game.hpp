@@ -34,10 +34,11 @@ class Game
     //! \param level The level of the pokemon.
     //! \param individualValues A list of individual values.
     //! \param effortValues A list of effort values.
+    //! \param nature The nature of pokemon.
     //! \return An added pokemon entity.
     entt::entity AddPokemon(std::string_view name, int level,
                             std::array<int, NUM_STATS> individualValues,
-                            std::array<int, NUM_STATS> effortValues);
+                            std::array<int, NUM_STATS> effortValues, Nature nature);
 
     //! Returns a pokemon entity that matches \p name.
     //! \param name The pokemon name to find.

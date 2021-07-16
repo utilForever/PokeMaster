@@ -98,7 +98,7 @@ void LoadData(entt::registry& registry)
 
 entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
                  std::array<int, NUM_STATS> individualValues,
-                 std::array<int, NUM_STATS> effortValues)
+                 std::array<int, NUM_STATS> effortValues, Nature nature)
 {
     entt::entity pokemon = FindByName(registry, std::move(name)).value();
     entt::entity newPokemon = registry.create();
@@ -113,6 +113,7 @@ entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
     registry.emplace<Types>(newPokemon, pokemonTypes.type1, pokemonTypes.type2);
     registry.replace<Stats>(newPokemon, pokemonStats.baseValues, individualValues,
                             effortValues);
+    registry.emplace<Nature>(newPokemon, nature);
 
     return newPokemon;
 }

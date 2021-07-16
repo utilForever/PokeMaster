@@ -24,10 +24,10 @@ Game::Game()
 
 entt::entity Game::AddPokemon(std::string_view name, int level,
                               std::array<int, NUM_STATS> individualValues,
-                              std::array<int, NUM_STATS> effortValues)
+                              std::array<int, NUM_STATS> effortValues, Nature nature)
 {
     return Pokemon::Add(m_registry, std::move(name), level, individualValues,
-                        effortValues);
+                        effortValues, nature);
 }
 
 std::optional<entt::entity> Game::FindPokemonByName(std::string_view&& name)
