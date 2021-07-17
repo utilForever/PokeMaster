@@ -118,6 +118,8 @@ entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
                             effortValues);
     registry.emplace<Natures>(newPokemon, nature);
 
+    CalculateStats(registry, newPokemon);
+
     return newPokemon;
 }
 
