@@ -58,6 +58,12 @@ void CalculateStats(entt::registry& registry, entt::entity entity);
 [[nodiscard]] std::optional<entt::entity> FindByName(entt::registry& registry,
                                                      std::string_view&& name);
 
+//! Returns the level of the pokemon.
+//! \param registry A registry of the entity-component system.
+//! \param entity A pokemon entity.
+//! \return The level of the pokemon.
+int GetLevel(entt::registry& registry, entt::entity entity);
+
 //! Returns the types of the pokemon.
 //! \param registry A registry of the entity-component system.
 //! \param entity A pokemon entity.

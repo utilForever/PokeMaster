@@ -178,6 +178,14 @@ std::optional<entt::entity> FindByName(entt::registry& registry, std::string_vie
     return std::nullopt;
 }
 
+int GetLevel(entt::registry& registry, entt::entity entity)
+{
+    auto view = registry.view<Level>();
+    auto& level = view.get<Level>(entity);
+
+    return level.level;
+}
+
 std::tuple<Type, Type> GetTypes(entt::registry& registry, entt::entity entity)
 {
     auto view = registry.view<Types>();
