@@ -81,8 +81,7 @@ void LoadData(entt::registry& registry)
             }
             else
             {
-                baseStats[stat["stat_id"].get<int>()] =
-                    baseStats[stat["base_stat"].get<int>()];
+                baseStats[stat["stat_id"].get<int>() - 1] = stat["base_stat"].get<int>();
             }
         }
 
