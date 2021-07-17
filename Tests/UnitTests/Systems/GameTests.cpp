@@ -10,6 +10,21 @@
 
 using namespace PokeMaster;
 
+TEST_CASE("[Game] - FindPokemonByIndex")
+{
+    Game game;
+
+    {
+        auto pokemon = game.FindPokemonByIndex(1);
+        CHECK_EQ(pokemon.has_value(), true);
+    }
+
+    {
+        auto pokemon = game.FindPokemonByIndex(-1);
+        CHECK_EQ(pokemon.has_value(), false);
+    }
+}
+
 TEST_CASE("[Game] - FindPokemonByName")
 {
     Game game;
