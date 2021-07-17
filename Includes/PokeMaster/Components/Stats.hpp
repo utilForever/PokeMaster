@@ -12,9 +12,46 @@
 #include <PokeMaster/Enums/PokemonEnums.hpp>
 
 #include <array>
+#include <cassert>
 
 namespace PokeMaster
 {
+//!
+//! \brief StatStorage class.
+//!
+//! A simple storage class for struct Stats.
+//!
+class StatStorage
+{
+ public:
+    StatStorage() = default;
+
+    StatStorage(std::initializer_list<int> stats)
+    {
+        assert(stats.size() == 6);
+
+        std::size_t idx = 0;
+        for (const auto& stat : stats)
+        {
+            m_values[idx] = stat;
+            ++idx;
+        }
+    }
+
+    int& operator[](std::size_t idx) noexcept
+    {
+        return m_values[idx];
+    }
+
+    int& operator[](Stat stat) noexcept
+    {
+        return m_values[static_cast<std::size_t>(stat) - 1];
+    }
+
+ private:
+    std::array<int, NUM_STATS> m_values;
+};
+
 //!
 //! \brief Stats struct.
 //!
@@ -24,10 +61,10 @@ namespace PokeMaster
 //!
 struct Stats
 {
-    std::array<int, NUM_STATS> baseValues;
-    std::array<int, NUM_STATS> individualValues;
-    std::array<int, NUM_STATS> effortValues;
-    std::array<int, NUM_STATS> values;
+    StatStorage baseValues;
+    StatStorage individualValues;
+    StatStorage effortValues;
+    StatStorage values;
 };
 }  // namespace PokeMaster
 
