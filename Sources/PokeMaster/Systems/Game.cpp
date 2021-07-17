@@ -35,6 +35,11 @@ std::optional<entt::entity> Game::FindPokemonByName(std::string_view&& name)
     return Pokemon::FindByName(m_registry, std::move(name));
 }
 
+int Game::GetPokemonLevel(entt::entity entity)
+{
+    return Pokemon::GetLevel(m_registry, entity);
+}
+
 std::tuple<Type, Type> Game::GetPokemonTypes(entt::entity entity)
 {
     return Pokemon::GetTypes(m_registry, entity);

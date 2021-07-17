@@ -46,6 +46,11 @@ class Game
     //! \return A pokemon entity that matches \p name.
     [[nodiscard]] std::optional<entt::entity> FindPokemonByName(std::string_view&& name);
 
+    //! Returns the level of the pokemon.
+    //! \param entity A pokemon entity.
+    //! \return The level of the pokemon.
+    int GetPokemonLevel(entt::entity entity);
+
     //! Returns the types of the pokemon.
     //! \param entity A pokemon entity.
     //! \return The types of the pokemon.
