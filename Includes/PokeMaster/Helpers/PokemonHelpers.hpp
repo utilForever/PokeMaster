@@ -51,6 +51,13 @@ entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
 //! \param entity A pokemon entity.
 void CalculateStats(entt::registry& registry, entt::entity entity);
 
+//! Returns a pokemon entity that matches \p index.
+//! \param registry A registry of the entity-component system.
+//! \param index The pokemon index to find.
+//! \return A pokemon entity that matches \p index.
+[[nodiscard]] std::optional<entt::entity> FindByIndex(entt::registry& registry,
+                                                      int index);
+
 //! Returns a pokemon entity that matches \p name.
 //! \param registry A registry of the entity-component system.
 //! \param name The pokemon name to find.

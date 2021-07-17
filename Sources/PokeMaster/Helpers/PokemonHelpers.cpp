@@ -167,6 +167,21 @@ void CalculateStats(entt::registry& registry, entt::entity entity)
     }
 }
 
+std::optional<entt::entity> FindByIndex(entt::registry& registry, int index)
+{
+    const auto view = registry.view<Tag::Pokemon, Index>();
+
+    for (auto [entity, pokemonIndex] : view.each())
+    {
+        if (index == pokemonIndex.index)
+        {
+            return entity;
+        }
+    }
+
+    return std::nullopt;
+}
+
 std::optional<entt::entity> FindByName(entt::registry& registry, std::string_view&& name)
 {
     const auto view = registry.view<Tag::Pokemon, Name>();
