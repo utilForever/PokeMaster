@@ -9,6 +9,7 @@
 #include <PokeMaster/Components/Index.hpp>
 #include <PokeMaster/Components/Level.hpp>
 #include <PokeMaster/Components/Name.hpp>
+#include <PokeMaster/Components/Natures.hpp>
 #include <PokeMaster/Components/Stats.hpp>
 #include <PokeMaster/Components/Types.hpp>
 #include <PokeMaster/Helpers/PokemonHelpers.hpp>
@@ -112,7 +113,7 @@ entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
     registry.emplace<Types>(newPokemon, pokemonTypes.type1, pokemonTypes.type2);
     registry.replace<Stats>(newPokemon, pokemonStats.baseValues, individualValues,
                             effortValues);
-    registry.emplace<Nature>(newPokemon, nature);
+    registry.emplace<Natures>(newPokemon, nature);
 
     return newPokemon;
 }
