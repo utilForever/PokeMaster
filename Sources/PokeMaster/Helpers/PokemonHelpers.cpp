@@ -123,8 +123,6 @@ entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
                             effortValues);
     registry.emplace<Natures>(newPokemon, nature);
 
-    CalculateStats(registry, newPokemon);
-
     return newPokemon;
 }
 
@@ -202,12 +200,13 @@ std::tuple<Type, Type> GetTypes(entt::registry& registry, entt::entity entity)
 
 StatStorage GetStats(entt::registry& registry, entt::entity entity)
 {
+    auto stats = registry.get<Stats>(entity);
+    
     if (!registry.all_of<Tag::PlayerPokemon>(entity))
     {
-        return StatStorage{};
+        return stats.baseValues;
     }
 
-    auto stats = registry.get<Stats>(entity);
     return stats.values;
 }
 }  // namespace PokeMaster::Pokemon
