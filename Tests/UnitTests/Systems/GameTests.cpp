@@ -98,4 +98,15 @@ TEST_CASE("[Game] - GetPokemonStats")
         CHECK_EQ(stats[Stat::SPECIAL_DEFENSE], 59);
         CHECK_EQ(stats[Stat::SPEED], 45);
     }
+
+    {
+        auto pokemon = game.FindPokemonByName("bulbasaur");
+        auto stats = game.GetPokemonStats(pokemon.value());
+        CHECK_EQ(stats[Stat::HP], 45);
+        CHECK_EQ(stats[Stat::ATTACK], 49);
+        CHECK_EQ(stats[Stat::DEFENSE], 49);
+        CHECK_EQ(stats[Stat::SPECIAL_ATTACK], 65);
+        CHECK_EQ(stats[Stat::SPECIAL_DEFENSE], 65);
+        CHECK_EQ(stats[Stat::SPEED], 45);
+    }
 }
