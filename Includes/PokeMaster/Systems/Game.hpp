@@ -51,6 +51,11 @@ class Game
     //! \return The types of the pokemon.
     std::tuple<Type, Type> GetPokemonTypes(entt::entity entity);
 
+    //! Returns the stats of the pokemon.
+    //! \param entity A pokemon entity.
+    //! \return The stats of the pokemon.
+    StatStorage GetPokemonStats(entt::entity entity);
+
  private:
     entt::registry m_registry;
 };

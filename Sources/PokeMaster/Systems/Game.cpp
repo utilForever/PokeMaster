@@ -39,4 +39,9 @@ std::tuple<Type, Type> Game::GetPokemonTypes(entt::entity entity)
 {
     return Pokemon::GetTypes(m_registry, entity);
 }
+
+StatStorage Game::GetPokemonStats(entt::entity entity)
+{
+    return Pokemon::GetStats(m_registry, entity);
+}
 }  // namespace PokeMaster
