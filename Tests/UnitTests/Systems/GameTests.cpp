@@ -25,6 +25,27 @@ TEST_CASE("[Game] - FindPokemonByName")
     }
 }
 
+TEST_CASE("[Game] - GetPokemonLevel")
+{
+    Game game;
+
+    {
+        auto pokemon =
+            game.AddPokemon("bulbasaur", 50, StatStorage{ 31, 31, 31, 31, 31, 31 },
+                            StatStorage{ 252, 4, 0, 252, 0, 0 }, Nature::QUIET);
+        auto level = game.GetPokemonLevel(pokemon);
+        CHECK_EQ(level, 50);
+    }
+
+    {
+        auto pokemon =
+            game.AddPokemon("dragonair", 24, StatStorage{ 15, 24, 8, 18, 23, 29 },
+                            StatStorage{ 0, 0, 252, 4, 252, 0 }, Nature::HARDY);
+        auto level = game.GetPokemonLevel(pokemon);
+        CHECK_EQ(level, 24);
+    }
+}
+
 TEST_CASE("[Game] - GetPokemonTypes")
 {
     Game game;
