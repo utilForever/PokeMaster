@@ -5,6 +5,7 @@
 // personal capacity and are not conveying any rights to any intellectual
 // property of any third parties.
 
+#include <PokeMaster/Commons/Tags.hpp>
 #include <PokeMaster/Components/Name.hpp>
 #include <PokeMaster/Helpers/MoveHelpers.hpp>
 
@@ -25,6 +26,7 @@ void LoadData(entt::registry& registry)
     for (auto& data : j)
     {
         auto entity = registry.create();
+        registry.emplace<Tag::Move>(entity);
         registry.emplace<Name>(entity, data["identifier"].get<std::string>());
     }
 

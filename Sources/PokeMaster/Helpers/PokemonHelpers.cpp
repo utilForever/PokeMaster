@@ -6,6 +6,7 @@
 // property of any third parties.
 
 #include <PokeMaster/Commons/Constants.hpp>
+#include <PokeMaster/Commons/Tags.hpp>
 #include <PokeMaster/Components/Index.hpp>
 #include <PokeMaster/Components/Level.hpp>
 #include <PokeMaster/Components/Name.hpp>
@@ -86,6 +87,7 @@ void LoadData(entt::registry& registry)
         }
 
         auto entity = registry.create();
+        registry.emplace<Tag::Pokemon>(entity);
         registry.emplace<Index>(entity, index);
         registry.emplace<Name>(entity, pokemon["identifier"].get<std::string>());
         registry.emplace<Types>(entity, type1, type2);
@@ -108,6 +110,7 @@ entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
     auto& pokemonTypes = view.get<Types>(pokemon);
     auto& pokemonStats = view.get<Stats>(pokemon);
 
+    registry.emplace<Tag::PlayerPokemon>(newPokemon);
     registry.emplace<Name>(newPokemon, pokemonName.name);
     registry.emplace<Level>(newPokemon, level);
     registry.emplace<Types>(newPokemon, pokemonTypes.type1, pokemonTypes.type2);
