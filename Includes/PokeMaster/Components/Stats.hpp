@@ -26,7 +26,7 @@ class StatStorage
  public:
     StatStorage() = default;
 
-    StatStorage(std::initializer_list<int> stats)
+    explicit StatStorage(std::initializer_list<int> stats)
     {
         assert(stats.size() == 6);
 

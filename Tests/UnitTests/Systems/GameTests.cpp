@@ -53,8 +53,9 @@ TEST_CASE("[Game] - GetPokemonStats")
     Game game;
 
     {
-        auto pokemon = game.AddPokemon("bulbasaur", 50, { 31, 31, 31, 31, 31, 31 },
-                                       { 252, 4, 0, 252, 0, 0 }, Nature::QUIET);
+        auto pokemon =
+            game.AddPokemon("bulbasaur", 50, StatStorage{ 31, 31, 31, 31, 31, 31 },
+                            StatStorage{ 252, 4, 0, 252, 0, 0 }, Nature::QUIET);
         auto stats = game.GetPokemonStats(pokemon);
         CHECK_EQ(stats[Stat::HP], 152);
         CHECK_EQ(stats[Stat::ATTACK], 70);
@@ -65,8 +66,9 @@ TEST_CASE("[Game] - GetPokemonStats")
     }
 
     {
-        auto pokemon = game.AddPokemon("dragonair", 24, { 15, 24, 8, 18, 23, 29 },
-                                       { 0, 0, 252, 4, 252, 0 }, Nature::HARDY);
+        auto pokemon =
+            game.AddPokemon("dragonair", 24, StatStorage{ 15, 24, 8, 18, 23, 29 },
+                            StatStorage{ 0, 0, 252, 4, 252, 0 }, Nature::HARDY);
         auto stats = game.GetPokemonStats(pokemon);
         CHECK_EQ(stats[Stat::HP], 66);
         CHECK_EQ(stats[Stat::ATTACK], 51);
