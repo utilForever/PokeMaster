@@ -89,8 +89,12 @@ void LoadData(entt::registry& registry)
         registry.emplace<Tag::Pokemon>(entity);
         registry.emplace<Index>(entity, index);
         registry.emplace<Name>(entity, pokemon["identifier"].get<std::string>());
+        registry.emplace<Level>(entity, 1);
         registry.emplace<Types>(entity, type1, type2);
         registry.emplace<Stats>(entity, baseStats);
+        registry.emplace<Natures>(entity, Nature::INVALID);
+
+        CalculateStats(registry, entity);
     }
 
     pokemonFile.close();
@@ -104,12 +108,14 @@ entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
     entt::entity pokemon = FindByName(registry, std::move(name)).value();
     entt::entity newPokemon = registry.create();
 
-    auto view = registry.view<Name, Types, Stats>();
+    auto view = registry.view<Index, Name, Types, Stats>();
+    auto& pokemonIndex = view.get<Index>(pokemon);
     auto& pokemonName = view.get<Name>(pokemon);
     auto& pokemonTypes = view.get<Types>(pokemon);
     auto& pokemonStats = view.get<Stats>(pokemon);
 
     registry.emplace<Tag::PlayerPokemon>(newPokemon);
+    registry.emplace<Index>(newPokemon, pokemonIndex.index);
     registry.emplace<Name>(newPokemon, pokemonName.name);
     registry.emplace<Level>(newPokemon, level);
     registry.emplace<Types>(newPokemon, pokemonTypes.type1, pokemonTypes.type2);
