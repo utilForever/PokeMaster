@@ -9,6 +9,7 @@
 #define POKE_MASTER_HPP
 
 #include <PokeMaster/Commons/Constants.hpp>
+#include <PokeMaster/Commons/Tags.hpp>
 #include <PokeMaster/Commons/Utils.hpp>
 #include <PokeMaster/Components/Index.hpp>
 #include <PokeMaster/Components/Level.hpp>
