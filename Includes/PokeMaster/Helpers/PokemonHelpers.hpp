@@ -9,6 +9,7 @@
 #define POKEMASTER_POKEMON_HELPERS_HPP
 
 #include <PokeMaster/Commons/Constants.hpp>
+#include <PokeMaster/Components/Stats.hpp>
 #include <PokeMaster/Enums/PokemonEnums.hpp>
 
 #include <entt/entt.hpp>
@@ -43,8 +44,7 @@ void LoadData(entt::registry& registry);
 //! \param nature The nature of pokemon.
 //! \return An added pokemon entity.
 entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
-                 std::array<int, NUM_STATS> individualValues,
-                 std::array<int, NUM_STATS> effortValues, Nature nature);
+                 StatStorage individualValues, StatStorage effortValues, Nature nature);
 
 //! Returns a pokemon entity that matches \p name.
 //! \param registry A registry of the entity-component system.

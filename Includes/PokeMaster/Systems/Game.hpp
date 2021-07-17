@@ -9,6 +9,7 @@
 #define POKEMASTER_GAME_HPP
 
 #include <PokeMaster/Commons/Constants.hpp>
+#include <PokeMaster/Components/Stats.hpp>
 #include <PokeMaster/Enums/PokemonEnums.hpp>
 
 #include <entt/entt.hpp>
@@ -37,8 +38,8 @@ class Game
     //! \param nature The nature of pokemon.
     //! \return An added pokemon entity.
     entt::entity AddPokemon(std::string_view name, int level,
-                            std::array<int, NUM_STATS> individualValues,
-                            std::array<int, NUM_STATS> effortValues, Nature nature);
+                            StatStorage individualValues, StatStorage effortValues,
+                            Nature nature);
 
     //! Returns a pokemon entity that matches \p name.
     //! \param name The pokemon name to find.

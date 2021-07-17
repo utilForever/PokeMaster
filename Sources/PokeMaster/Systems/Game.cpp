@@ -23,8 +23,8 @@ Game::Game()
 }
 
 entt::entity Game::AddPokemon(std::string_view name, int level,
-                              std::array<int, NUM_STATS> individualValues,
-                              std::array<int, NUM_STATS> effortValues, Nature nature)
+                              StatStorage individualValues, StatStorage effortValues,
+                              Nature nature)
 {
     return Pokemon::Add(m_registry, std::move(name), level, individualValues,
                         effortValues, nature);
