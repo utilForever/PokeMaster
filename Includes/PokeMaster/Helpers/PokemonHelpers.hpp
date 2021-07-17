@@ -46,6 +46,11 @@ void LoadData(entt::registry& registry);
 entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
                  StatStorage individualValues, StatStorage effortValues, Nature nature);
 
+//! Calculates stats of pokemon with base, IV, EV, level and nature.
+//! \param registry A registry of the entity-component system.
+//! \param entity A pokemon entity.
+void CalculateStats(entt::registry& registry, entt::entity entity);
+
 //! Returns a pokemon entity that matches \p name.
 //! \param registry A registry of the entity-component system.
 //! \param name The pokemon name to find.
