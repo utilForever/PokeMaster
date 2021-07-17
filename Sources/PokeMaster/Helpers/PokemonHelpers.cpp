@@ -93,8 +93,6 @@ void LoadData(entt::registry& registry)
         registry.emplace<Types>(entity, type1, type2);
         registry.emplace<Stats>(entity, baseStats);
         registry.emplace<Natures>(entity, Nature::INVALID);
-
-        CalculateStats(registry, entity);
     }
 
     pokemonFile.close();
@@ -122,6 +120,8 @@ entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
     registry.emplace<Stats>(newPokemon, pokemonStats.baseValues, individualValues,
                             effortValues);
     registry.emplace<Natures>(newPokemon, nature);
+
+    CalculateStats(registry, newPokemon);
 
     return newPokemon;
 }
