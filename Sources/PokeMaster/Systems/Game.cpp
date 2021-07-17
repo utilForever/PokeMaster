@@ -30,6 +30,11 @@ entt::entity Game::AddPokemon(std::string_view name, int level,
                         effortValues, nature);
 }
 
+std::optional<entt::entity> Game::FindPokemonByIndex(int index)
+{
+    return Pokemon::FindByIndex(m_registry, index);
+}
+
 std::optional<entt::entity> Game::FindPokemonByName(std::string_view&& name)
 {
     return Pokemon::FindByName(m_registry, std::move(name));

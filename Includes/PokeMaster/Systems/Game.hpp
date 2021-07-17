@@ -41,6 +41,11 @@ class Game
                             StatStorage individualValues, StatStorage effortValues,
                             Nature nature);
 
+    //! Returns a pokemon entity that matches \p index.
+    //! \param index The pokemon index to find.
+    //! \return A pokemon entity that matches \p index.
+    [[nodiscard]] std::optional<entt::entity> FindPokemonByIndex(int index);
+
     //! Returns a pokemon entity that matches \p name.
     //! \param name The pokemon name to find.
     //! \return A pokemon entity that matches \p name.
