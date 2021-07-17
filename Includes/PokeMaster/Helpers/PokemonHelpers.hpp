@@ -63,6 +63,12 @@ void CalculateStats(entt::registry& registry, entt::entity entity);
 //! \param entity A pokemon entity.
 //! \return The types of the pokemon.
 std::tuple<Type, Type> GetTypes(entt::registry& registry, entt::entity entity);
+
+//! Returns the stats of the pokemon.
+//! \param registry A registry of the entity-component system.
+//! \param entity A pokemon entity.
+//! \return The stats of the pokemon.
+StatStorage GetStats(entt::registry& registry, entt::entity entity);
 }  // namespace PokeMaster::Pokemon
 
 #endif  // POKEMASTER_POKEMON_HELPERS_HPP

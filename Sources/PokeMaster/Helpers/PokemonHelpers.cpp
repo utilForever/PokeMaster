@@ -114,7 +114,7 @@ entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
     registry.emplace<Name>(newPokemon, pokemonName.name);
     registry.emplace<Level>(newPokemon, level);
     registry.emplace<Types>(newPokemon, pokemonTypes.type1, pokemonTypes.type2);
-    registry.replace<Stats>(newPokemon, pokemonStats.baseValues, individualValues,
+    registry.emplace<Stats>(newPokemon, pokemonStats.baseValues, individualValues,
                             effortValues);
     registry.emplace<Natures>(newPokemon, nature);
 
@@ -185,5 +185,16 @@ std::tuple<Type, Type> GetTypes(entt::registry& registry, entt::entity entity)
     auto& types = view.get<Types>(entity);
 
     return std::make_tuple(types.type1, types.type2);
+}
+
+StatStorage GetStats(entt::registry& registry, entt::entity entity)
+{
+    if (!registry.all_of<Tag::PlayerPokemon>(entity))
+    {
+        return StatStorage{};
+    }
+
+    auto stats = registry.get<Stats>(entity);
+    return stats.values;
 }
 }  // namespace PokeMaster::Pokemon
