@@ -169,7 +169,7 @@ void CalculateStats(entt::registry& registry, entt::entity entity)
 
 std::optional<entt::entity> FindByName(entt::registry& registry, std::string_view&& name)
 {
-    const auto view = registry.view<Name>();
+    const auto view = registry.view<Tag::Pokemon, Name>();
 
     for (auto [entity, pokemonName] : view.each())
     {
