@@ -9,19 +9,20 @@
 #define POKE_MASTER_HPP
 
 #include <PokeMaster/Commons/Constants.hpp>
+#include <PokeMaster/Commons/Tags.hpp>
 #include <PokeMaster/Commons/Utils.hpp>
+#include <PokeMaster/Components/Index.hpp>
+#include <PokeMaster/Components/Level.hpp>
+#include <PokeMaster/Components/Name.hpp>
+#include <PokeMaster/Components/Natures.hpp>
+#include <PokeMaster/Components/Stats.hpp>
+#include <PokeMaster/Components/Types.hpp>
 #include <PokeMaster/Enums/PokemonEnums.hpp>
-#include <PokeMaster/Loaders/ItemLoader.hpp>
-#include <PokeMaster/Loaders/MoveLoader.hpp>
-#include <PokeMaster/Loaders/PokemonLoader.hpp>
-#include <PokeMaster/Managers/ItemManager.hpp>
-#include <PokeMaster/Managers/MoveManager.hpp>
-#include <PokeMaster/Managers/PokemonManager.hpp>
+#include <PokeMaster/Helpers/ItemHelpers.hpp>
+#include <PokeMaster/Helpers/MoveHelpers.hpp>
+#include <PokeMaster/Helpers/PokemonHelpers.hpp>
 #include <PokeMaster/Models/Battle.hpp>
-#include <PokeMaster/Models/Item.hpp>
-#include <PokeMaster/Models/Move.hpp>
-#include <PokeMaster/Models/Pokemon.hpp>
-#include <PokeMaster/Models/Stats.hpp>
 #include <PokeMaster/PokeMaster.hpp>
+#include <PokeMaster/Systems/Game.hpp>
 
 #endif  // POKE_MASTER_HPP

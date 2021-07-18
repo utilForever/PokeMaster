@@ -5,15 +5,14 @@
 // personal capacity and are not conveying any rights to any intellectual
 // property of any third parties.
 
-#ifndef POKEMASTER_MOVE_HPP
-#define POKEMASTER_MOVE_HPP
+#ifndef POKEMASTER_MOVE_HELPERS_HPP
+#define POKEMASTER_MOVE_HELPERS_HPP
 
-#include <string_view>
+#include <entt/entt.hpp>
 
-namespace PokeMaster
+namespace PokeMaster::Move
 {
-//!
-//! \brief Move class.
+//! Loads move data from moves.json.
 //!
 //! A Move is a technique that a Pokémon uses during Battles. Moves are mainly
 //! used to inflict damage on the opponent. Moves usually come from a natural
@@ -23,12 +22,8 @@ namespace PokeMaster
 //! in the game. There are three categories of moves: Physical, Special, and
 //! Status. Each type holds a different kind of effect when used.
 //!
-class Move
-{
- public:
-    int id;
-    std::string_view name;
-};
-}  // namespace PokeMaster
+//! \param registry A registry of the entity-component system.
+void LoadData(entt::registry& registry);
+}  // namespace PokeMaster::Move
 
-#endif  // POKEMASTER_MOVE_HPP
+#endif  // POKEMASTER_MOVE_HELPERS_HPP

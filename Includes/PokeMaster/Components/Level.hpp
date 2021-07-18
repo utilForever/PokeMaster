@@ -5,8 +5,20 @@
 // personal capacity and are not conveying any rights to any intellectual
 // property of any third parties.
 
-#include <PokeMaster/Models/Move.hpp>
+#ifndef POKEMASTER_LEVEL_HPP
+#define POKEMASTER_LEVEL_HPP
 
 namespace PokeMaster
 {
+//!
+//! \brief Level struct.
+//!
+//! This struct stores the level of the entity.
+//!
+struct Level
+{
+    int level;
+};
 }  // namespace PokeMaster
+
+#endif  // POKEMASTER_LEVEL_HPP

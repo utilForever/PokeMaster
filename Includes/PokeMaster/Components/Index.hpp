@@ -5,8 +5,20 @@
 // personal capacity and are not conveying any rights to any intellectual
 // property of any third parties.
 
-#include <PokeMaster/Models/Item.hpp>
+#ifndef POKEMASTER_INDEX_HPP
+#define POKEMASTER_INDEX_HPP
 
 namespace PokeMaster
 {
+//!
+//! \brief Index struct.
+//!
+//! This struct stores the index of the entity.
+//!
+struct Index
+{
+    int index;
+};
 }  // namespace PokeMaster
+
+#endif  // POKEMASTER_INDEX_HPP

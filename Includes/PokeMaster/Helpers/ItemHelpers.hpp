@@ -5,27 +5,22 @@
 // personal capacity and are not conveying any rights to any intellectual
 // property of any third parties.
 
-#ifndef POKEMASTER_ITEM_HPP
-#define POKEMASTER_ITEM_HPP
+#ifndef POKEMASTER_ITEM_HELPERS_HPP
+#define POKEMASTER_ITEM_HELPERS_HPP
 
-#include <string_view>
+#include <entt/entt.hpp>
 
-namespace PokeMaster
+namespace PokeMaster::Item
 {
-//!
-//! \brief Item class.
+//! Loads item data from items.json.
 //!
 //! An item (Japanese: 道具 tool) is an object in the Pokémon games which the
 //! player can pick up, keep in their Bag, and use in some manner. They have
 //! various uses, including healing, powering up, helping one to catch Pokémon,
 //! or accessing new areas.
 //!
-class Item
-{
- public:
-    int id;
-    std::string_view name;
-};
+//! \param registry A registry of the entity-component system.
+void LoadData(entt::registry& registry);
 }  // namespace PokeMaster
 
-#endif  // POKEMASTER_ITEM_HPP
+#endif  // POKEMASTER_ITEM_HELPERS_HPP

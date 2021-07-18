@@ -5,13 +5,17 @@
 // personal capacity and are not conveying any rights to any intellectual
 // property of any third parties.
 
-#include <PokeMaster/Loaders/ItemLoader.hpp>
+#include <PokeMaster/Commons/Tags.hpp>
+#include <PokeMaster/Components/Name.hpp>
+#include <PokeMaster/Helpers/ItemHelpers.hpp>
+
+#include <json/json.hpp>
 
 #include <fstream>
 
-namespace PokeMaster
+namespace PokeMaster::Item
 {
-void ItemLoader::Load(std::array<Item, NUM_ITEMS>& items)
+void LoadData(entt::registry& registry)
 {
     // Read Item data from JSON file
     std::ifstream itemFile(RESOURCES_DIR "items.json");
@@ -19,21 +23,13 @@ void ItemLoader::Load(std::array<Item, NUM_ITEMS>& items)
 
     itemFile >> j;
 
-    std::size_t idx = 0;
-
     for (auto& data : j)
     {
-        const int id = data["id"].get<int>();
-        const auto name = data["identifier"].get<std::string_view>();
-
-        Item item;
-        item.id = id;
-        item.name = name;
-
-        items.at(idx) = item;
-        ++idx;
+        auto entity = registry.create();
+        registry.emplace<Tag::Item>(entity);
+        registry.emplace<Name>(entity, data["identifier"].get<std::string>());
     }
 
     itemFile.close();
 }
-}  // namespace PokeMaster
+}  // namespace PokeMaster::Item
