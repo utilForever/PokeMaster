@@ -59,6 +59,17 @@ class StatStorage
 //! determines certain aspects of battles in the games. Stats may also refer to the
 //! numerical values of each field in regards to individual Pokémon.
 //!
+//! Base statistics are the statistics a Pokémon has when it is born.
+//! These increase when the Pokémon wins in a battle and levels up.
+//!
+//! Individual Values, or IVs, serve as a factor in determining a Pokémon's stats
+//! and differ from Pokémon to Pokémon, functioning like a Pokémon's "Genes".
+//!
+//! Effort Value Points (or EVs) are unseen statistics that can increase your
+//! Pokémon's stats. The system was introduced in the third generation (Ruby,
+//! Sapphire and Emerald). EVs are obtained by fighting other Pokémon.
+//! Depending on the defeated Pokémon, different EVs will be obtained.
+//!
 struct Stats
 {
     StatStorage baseValues;
