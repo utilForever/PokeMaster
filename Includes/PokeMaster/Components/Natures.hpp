@@ -15,7 +15,7 @@ namespace PokeMaster
 //!
 //! \brief Natures struct.
 //!
-//! Natures (せいかく Personality ) are a Pokémon's personality and effect their Stats as
+//! Natures (せいかく Personality) are a Pokémon's personality and effect their Stats as
 //! it levels up. Specifically, all but five Natures can affect two stats, increasing one
 //! by 10% and decreasing another by 10%. Additionally, all but the same five stats affect
 //! what kind of flavor the Pokémon will like as well. Natures have the potential to
