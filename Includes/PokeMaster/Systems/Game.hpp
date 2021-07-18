@@ -30,40 +30,40 @@ class Game
     //! Constructs new game and loads related data.
     Game();
 
-    //! Adds a pokemon for the player.
-    //! \param name The name of the pokemon.
-    //! \param level The level of the pokemon.
+    //! Adds a Pokémon for the player.
+    //! \param name The name of the Pokémon.
+    //! \param level The level of the Pokémon.
     //! \param individualValues A list of individual values.
     //! \param effortValues A list of effort values.
-    //! \param nature The nature of pokemon.
-    //! \return An added pokemon entity.
+    //! \param nature The nature of Pokémon.
+    //! \return An added Pokémon entity.
     entt::entity AddPokemon(std::string_view name, int level,
                             StatStorage individualValues, StatStorage effortValues,
                             Nature nature);
 
-    //! Returns a pokemon entity that matches \p index.
-    //! \param index The pokemon index to find.
-    //! \return A pokemon entity that matches \p index.
+    //! Returns a Pokémon entity that matches \p index.
+    //! \param index The Pokémon index to find.
+    //! \return A Pokémon entity that matches \p index.
     [[nodiscard]] std::optional<entt::entity> FindPokemonByIndex(int index);
 
-    //! Returns a pokemon entity that matches \p name.
-    //! \param name The pokemon name to find.
-    //! \return A pokemon entity that matches \p name.
+    //! Returns a Pokémon entity that matches \p name.
+    //! \param name The Pokémon name to find.
+    //! \return A Pokémon entity that matches \p name.
     [[nodiscard]] std::optional<entt::entity> FindPokemonByName(std::string_view&& name);
 
-    //! Returns the level of the pokemon.
-    //! \param entity A pokemon entity.
-    //! \return The level of the pokemon.
+    //! Returns the level of the Pokémon.
+    //! \param entity A Pokémon entity.
+    //! \return The level of the Pokémon.
     int GetPokemonLevel(entt::entity entity);
 
-    //! Returns the types of the pokemon.
-    //! \param entity A pokemon entity.
-    //! \return The types of the pokemon.
+    //! Returns the types of the Pokémon.
+    //! \param entity A Pokémon entity.
+    //! \return The types of the Pokémon.
     std::tuple<Type, Type> GetPokemonTypes(entt::entity entity);
 
-    //! Returns the stats of the pokemon.
-    //! \param entity A pokemon entity.
-    //! \return The stats of the pokemon.
+    //! Returns the stats of the Pokémon.
+    //! \param entity A Pokémon entity.
+    //! \return The stats of the Pokémon.
     StatStorage GetPokemonStats(entt::entity entity);
 
  private:

@@ -35,52 +35,52 @@ namespace PokeMaster::Pokemon
 //! \param registry A registry of the entity-component system.
 void LoadData(entt::registry& registry);
 
-//! Adds a pokemon for the player.
+//! Adds a Pokémon for the player.
 //! \param registry A registry of the entity-component system.
-//! \param name The name of the pokemon.
-//! \param level The level of the pokemon.
+//! \param name The name of the Pokémon.
+//! \param level The level of the Pokémon.
 //! \param individualValues A list of individual values.
 //! \param effortValues A list of effort values.
-//! \param nature The nature of pokemon.
-//! \return An added pokemon entity.
+//! \param nature The nature of Pokémon.
+//! \return An added Pokémon entity.
 entt::entity Add(entt::registry& registry, std::string_view&& name, int level,
                  StatStorage individualValues, StatStorage effortValues, Nature nature);
 
-//! Calculates stats of pokemon with base, IV, EV, level and nature.
+//! Calculates stats of Pokémon with base, IV, EV, level and nature.
 //! \param registry A registry of the entity-component system.
-//! \param entity A pokemon entity.
+//! \param entity A Pokémon entity.
 void CalculateStats(entt::registry& registry, entt::entity entity);
 
-//! Returns a pokemon entity that matches \p index.
+//! Returns a Pokémon entity that matches \p index.
 //! \param registry A registry of the entity-component system.
-//! \param index The pokemon index to find.
-//! \return A pokemon entity that matches \p index.
+//! \param index The Pokémon index to find.
+//! \return A Pokémon entity that matches \p index.
 [[nodiscard]] std::optional<entt::entity> FindByIndex(entt::registry& registry,
                                                       int index);
 
-//! Returns a pokemon entity that matches \p name.
+//! Returns a Pokémon entity that matches \p name.
 //! \param registry A registry of the entity-component system.
-//! \param name The pokemon name to find.
-//! \return A pokemon entity that matches \p name.
+//! \param name The Pokémon name to find.
+//! \return A Pokémon entity that matches \p name.
 [[nodiscard]] std::optional<entt::entity> FindByName(entt::registry& registry,
                                                      std::string_view&& name);
 
-//! Returns the level of the pokemon.
+//! Returns the level of the Pokémon.
 //! \param registry A registry of the entity-component system.
-//! \param entity A pokemon entity.
-//! \return The level of the pokemon.
+//! \param entity A Pokémon entity.
+//! \return The level of the Pokémon.
 int GetLevel(entt::registry& registry, entt::entity entity);
 
-//! Returns the types of the pokemon.
+//! Returns the types of the Pokémon.
 //! \param registry A registry of the entity-component system.
-//! \param entity A pokemon entity.
-//! \return The types of the pokemon.
+//! \param entity A Pokémon entity.
+//! \return The types of the Pokémon.
 std::tuple<Type, Type> GetTypes(entt::registry& registry, entt::entity entity);
 
-//! Returns the stats of the pokemon.
+//! Returns the stats of the Pokémon.
 //! \param registry A registry of the entity-component system.
-//! \param entity A pokemon entity.
-//! \return The stats of the pokemon.
+//! \param entity A Pokémon entity.
+//! \return The stats of the Pokémon.
 StatStorage GetStats(entt::registry& registry, entt::entity entity);
 }  // namespace PokeMaster::Pokemon
 
