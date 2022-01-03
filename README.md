@@ -1,14 +1,6 @@
 # PokeMaster
 
-<img src="./Medias/Logos/Logo.png" width=256 height=256 />
-
-[![License](https://img.shields.io/badge/Licence-AGPLv3-blue.svg)](https://github.com/utilForever/PokeMaster/blob/main/LICENSE) ![Windows](https://github.com/utilForever/PokeMaster/workflows/Windows/badge.svg) ![Ubuntu](https://github.com/utilForever/PokeMaster/workflows/Ubuntu/badge.svg) ![macOS](https://github.com/utilForever/PokeMaster/workflows/macOS/badge.svg) ![Ubuntu - Codecov](https://github.com/utilForever/PokeMaster/workflows/Ubuntu%20-%20Codecov/badge.svg) [![Build Status](https://travis-ci.com/utilForever/PokeMaster.svg?branch=main)](https://travis-ci.com/utilForever/PokeMaster)
-
-[![codecov](https://codecov.io/gh/utilForever/PokeMaster/branch/main/graph/badge.svg)](https://codecov.io/gh/utilForever/PokeMaster) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/24543ec0dbe04cb3baf6734deadb3825)](https://www.codacy.com/manual/utilForever/PokeMaster?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=utilForever/PokeMaster&amp;utm_campaign=Badge_Grade) [![Total alerts](https://img.shields.io/lgtm/alerts/g/utilForever/PokeMaster.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/utilForever/PokeMaster/alerts/) [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/utilForever/PokeMaster.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/utilForever/PokeMaster/context:cpp) [![CodeFactor](https://www.codefactor.io/repository/github/utilforever/PokeMaster/badge)](https://www.codefactor.io/repository/github/utilforever/PokeMaster)
-
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=PokeMaster&metric=alert_status)](https://sonarcloud.io/dashboard?id=PokeMaster) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=PokeMaster&metric=ncloc)](https://sonarcloud.io/dashboard?id=PokeMaster) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=PokeMaster&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=PokeMaster) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=PokeMaster&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=PokeMaster) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=PokeMaster&metric=security_rating)](https://sonarcloud.io/dashboard?id=PokeMaster)
-
-PokeMaster is Pokémon battle simulator using C++ with some reinforcement learning. The code is built on C++17 and can be compiled with commonly available compilers such as g++, clang++, or Microsoft Visual Studio. PokeMaster currently supports macOS (10.14 or later), Ubuntu (18.04 or later), Windows (Visual Studio 2017 or later), and Windows Subsystem for Linux (WSL). Other untested platforms that support C++17 also should be able to build PokeMaster.
+PokeMaster is Pokémon battle simulator using Rust with some reinforcement learning.
 
 ## What is "Pokemon"?
 
@@ -32,10 +24,11 @@ You can contact me via e-mail (utilForever at gmail.com). I am always happy to a
 
 The class is licensed under the [MIT License](http://opensource.org/licenses/MIT):
 
-Copyright &copy; 2021 PokeMaster Team
+Copyright &copy; 2022 PokeMaster Team
 
   * [Chris Ohk](http://www.github.com/utilForever)
   * [Won Park](https://github.com/circle-oo)
+  * [Taewoo An](https://github.com/codingskynet)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

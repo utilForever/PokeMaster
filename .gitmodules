@@ -1,9 +1,0 @@
-[submodule "Libraries/doctest"]
-	path = Libraries/doctest
-	url = https://github.com/onqtam/doctest
-[submodule "Libraries/random"]
-	path = Libraries/random
-	url = https://github.com/effolkronium/random
-[submodule "Libraries/entt"]
-	path = Libraries/entt
-	url = https://github.com/skypjack/entt
