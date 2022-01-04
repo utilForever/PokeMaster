@@ -1,0 +1,13 @@
+[package]
+name = "pokemaster"
+version = "0.0.1"
+authors = [ "Chris Ohk <utilforever@gmail.com>", "Won Park <woni8708@naver.com>", "Taewoo An <taewoo.an@kaist.ac.kr>" ]
+edition = "2018"
+description = "Pokémon battle simulator using Rust with some reinforcement learning"
+
+readme = "README.md"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
