@@ -1,5 +1,9 @@
 # PokeMaster
 
+<img src="./media/logo.png" width=256 height=256 />
+
+[![License](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://github.com/utilForever/PokeMaster/blob/main/LICENSE) ![Build](https://github.com/utilForever/PokeMaster/workflows/Build/badge.svg) ![Audit](https://github.com/utilForever/PokeMaster/workflows/Audit/badge.svg) ![Rust](https://github.com/utilForever/PokeMaster/workflows/Rust/badge.svg)
+
 PokeMaster is Pokémon battle simulator using Rust with some reinforcement learning.
 
 ## What is "Pokemon"?
